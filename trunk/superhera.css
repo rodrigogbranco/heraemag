@@ -1,0 +1,202 @@
+/*================================
+  HERA v.2.0 Beta                 
+  File: superhera.css             
+  CSS for graphic view of page    
+================================*/
+
+body {
+	border-top: 60px solid #9cf !important;
+	margin: 0px !important;
+}
+
+div.sidarbien, div.sidarduda, div.sidarmal, div.sidardudabis {
+	font-style: normal !important;
+	font-weight: normal !important;
+	font: menu !important;
+	line-height: 1.3em !important;
+	text-decoration: none !important;
+	text-align: left !important;
+	padding: 0.5em !important;
+	border: 3px solid #F00 !important;
+	color: #000 !important;
+}
+
+a:link div.sidarbien, a:visited div.sidarbien,
+a:link div.sidarduda, a:visited div.sidarduda,
+a:link div.sidarmal, a:visited div.sidarmal,
+a:link div.sidardudabis, a:visited div.sidardudabis {
+	font-style: normal !important;
+	font-weight: normal !important;
+	font: menu !important;
+	line-height: 1.3em !important;
+	text-decoration: underline !important;
+}
+
+div.sidarbien a:link, div.sidarbien a:visited,
+div.sidarduda a:link, div.sidarduda a:visited,
+div.sidarmal a:link, div.sidarmal a:visited,
+div.sidardudabis a:link, div.sidardudabis a:visited {
+	font-style: normal !important;
+	font-weight: normal !important;
+	font: menu !important;
+	line-height: 1.3em !important;
+	text-decoration: underline !important;
+	background-color: transparent !important;
+	color: #000 !important;
+}
+
+
+div.sidarbien {
+	background-color: #CFC !important; 
+}
+div.sidarmal {
+	background-color: #FCF !important; 
+}
+div.sidarduda {
+	background-color: #FF9 !important; 
+}
+div.sidardudabis {
+	background-color: #0FF !important; 
+}
+
+img.sidarico {
+	border: none !important;
+	width: 12px !important;
+	height: 12px !important;
+}
+
+div#heracss {
+	width: 15px;
+	position: absolute !important;
+	top:0px !important;
+	left:0px !important;
+	z-index:10000 !important;
+}
+
+img#heracssimg, img#heracodeimg {
+	/*margin-right:15px !important;*/
+	border: none !important;
+	width: 16px !important;
+	height: 16px !important;
+}
+
+img#heracodeimg:after, img#heracodeimg:before,
+img#heracssimg:after, img#heracssimg:before {
+	display: none !important;
+	content: '' !important;
+}
+
+div#heradiv {
+	color: #000 !important;
+	background: #9cf url(http://www.sidar.org/hera/img/minihera.gif) no-repeat top right !important;
+	font-style: normal !important;
+	font-weight: normal !important;
+	font: menu !important;
+	line-height: 1.3em !important;
+	text-align: left;
+	text-decoration: none !important;
+	height: 50px !important;
+	position: absolute !important;
+	top: 0px !important;
+	left: 0px !important;
+	z-index: 10000 !important;
+	padding: 4px 100px 4px 30px !important;
+	margin: 0px;
+}
+
+div#heradiv a {
+	text-decoration: none !important;
+}
+
+div#heradiv span#icons {
+	float: left !important;
+	padding: 6px 4px !important;
+	margin: 4px 8px !important;
+	background: #fff !important;
+	border-top: 1px solid #000 !important;
+	border-left: 1px solid #000 !important;
+}
+
+/* Vista de elementos */
+
+body#this {
+	font-family : verdana, sans-serif !important;
+	margin: 0px !important;
+	padding: 0px !important;
+	background-color: #9cf !important;
+	color: #000 !important;
+	font-size: 90% !important;
+	background-image: none !important;
+}
+body#this div#box h1 {
+	font-weight: bold !important;
+	font-variant: small-caps !important;
+	font-size: 150% !important;
+	text-align: left !important;
+	margin: 1em 0em 1em 5% !important;
+	padding: 0px !important;
+	text-decoration: none !important;
+	border: none !important;
+	color: #000 !important;
+	background-color: transparent !important;
+}
+
+
+body#this div#box img.heraico { width: 12px !important;
+height: 12px !important;
+border: none !important;}
+
+body#this div#box {
+	border-top: 3px outset #eee !important;
+	background-color: #fff !important;
+	padding: 0.5em 3% 1.5em 3% !important;
+	margin: 0em 3% 2em 3% !important;
+	text-align: left !important;
+	position: static !important;
+	float: none !important;
+}
+
+body#this div#box img {
+	float: none !important;
+	border: 2px dotted #f00 !important;
+}
+
+body#this div#heradiv {
+	color: #000 !important;
+	background: #9cf url(http://www.sidar.org/hera/img/minihera.gif) no-repeat top right!important;
+	font-style: normal !important;
+	font-weight: normal !important;
+	font: menu !important;
+	line-height: 1.3em !important;
+	text-align: left !important;
+	text-decoration: none !important;
+	height: 50px !important;
+	padding: 4px 100px 4px 30px !important;
+	margin: 0px !important;
+}
+
+body#this div#heradiv a {
+	text-decoration: none !important;
+}
+
+body#this div#heradiv span#icons {
+	float: left !important;
+	padding: 6px 4px !important;
+	margin: 4px 8px !important;
+	background: #fff !important;
+	border-top: 1px solid #000 !important;
+	border-left: 1px solid #000 !important;
+}
+
+body#this .sidarbien {
+	background-color: #CFC !important; 
+}
+body#this .sidarmal {
+	background-color: #FCF !important; 
+}
+body#this .sidarduda {
+	background-color: #FF9 !important; 
+}
+body#this .sidardudabis {
+	background-color: #0FF !important; 
+}
