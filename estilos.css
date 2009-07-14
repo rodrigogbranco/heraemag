@@ -1,0 +1,664 @@
+/*================================
+  HERA v.2.0 Beta                 
+  File: estilos.css               
+  Hera CSS                        
+================================*/
+
+body {
+	font-family : Verdana, Arial, sans-serif;
+	margin: 0px;
+	padding: 0px;
+	background-color: #fff;
+	color: #000;
+	font-size : 0.9em;
+	line-height: 1.3em;
+}
+
+body#codigo {
+/*	background: #9cf url('img/red.gif'); */
+	background: #9cf url('img/fondo.gif') left bottom repeat;
+	color: #000;
+	margin: 0px;
+	padding: 0px;
+}
+a:link {
+	color: #004000;
+	background-color: transparent;
+}
+a:visited {
+	color: #400000;
+	background-color: transparent;
+}
+
+div#codtop {
+	margin: 0px;
+	padding: 4px 8px;
+	background: #9cf;
+	color: #000;
+}
+div#codtop h1 { margin-top: 0px; }
+div#cajacod {
+	padding: 1em;
+	margin: 1em 3%;
+	background-color: #fff;
+	color: #000;
+	border: 3px outset #eee;
+}
+div#cajacod ol li {
+	font-size: 90%;
+	line-height: 1.5em;
+	margin-bottom: 0.5em;
+}
+
+div#cabecera {
+	color: #000;
+	/*background: #9cf url('img/red.gif');*/
+	background: #9cf url('img/fondo.gif') left bottom repeat;
+	padding-bottom: 1em;
+}
+
+div#top {
+	color: #fff;
+	background: #006600 ; /*#2FC800;*/
+	height: 1.5em;
+	padding: 0em 2em 0em 1em;
+	font-size: 90%;
+	font-weight: bold;
+}
+
+ul.resumen {
+	padding: 1em 5em;
+	margin-top: 0em;
+	margin-left: 5%;
+	border-top: 1px solid #9cf;
+	border-bottom: 1px solid #9cf;
+}
+
+ul.resumen em {
+	color: #254A6F;
+}
+
+ul.resumen li {
+	line-height: 1.3em;
+}
+
+ul.resumen li#sub {
+	color: #254A6F;
+	background: #F8F8FF ;
+}
+
+/*Alterações VVB 29/10/2008 */
+ul.resumen_met {
+	padding: 1em 5em;
+	margin-top: 0em;
+	margin-left: 5%;
+	border-top: 1px solid #7CCD7C;
+	border-bottom: 1px solid #7CCD7C;
+}
+
+ul.resumen_met em {
+	color: #3C5E3C;
+}
+
+ul.resumen_met li {
+	line-height: 1.3em;
+}
+
+ul.resumen_met li#sub {
+	color: #3C5E3C;
+	background: #eff7ef ;
+}
+
+ul.resumen_met li#metrics {
+	line-height: 1.3em;
+	margin-bottom: 0.8em;
+	text-align: justify; 
+	
+}
+/*-----------------------end VVB*/
+
+div.divpie {
+	background: #9cf url('img/s_cel.gif') repeat-x;
+	color: #000;
+	margin: 0px;
+	padding: 6px 1em 1em 1em;
+	height: 45px;
+	font-size: 1em;
+}
+div.divpie p { margin: 1em 0em 0em 80px; font:menu; }
+div.divpie a:link, div.divpie a:visited { text-decoration: none; font:caption; }
+div#logopie { float: left; }
+
+dl.directorio dt { margin-top: 1em; }
+
+div#top a { color: #ffc; text-decoration: none; }
+div#top a:hover { color: #fff; }
+
+p.pagina { margin: 0px 100px 0px 5%; font-size: 90%; }
+p.pagina input#btns { font: menu; background-color: #eee; border: 3px double #999; padding: 2px; }
+p.error_url { margin: 0px 5%; font-weight: bold; color: #c00; }
+
+form { margin: 0px; padding: 0px; }
+
+div.caja {
+	margin: 2.5em 5% 1em 5%;
+	font-size: 0.9em;
+	line-height: 1.5em;
+	border: 2px dotted #ccc;
+	padding-top: 1.3em;
+	padding-right: 2em;
+	padding-left: 3em;
+	padding-bottom: 3em;
+}
+
+p.menu {
+	background: #fff url('img/s_gri.gif') repeat-x;
+	color: #000;
+	margin: 0px;
+	padding: 0px;
+	height: 15px;
+	font-size: 90%;
+	font-weight: normal;
+}
+
+p.menu span#iconos { border-left: 2px dotted #9cf; border-bottom: 2px dotted #9cf; float: right; padding: 8px 8px 8px 4px;}
+
+p.menu a { font-weight: bold; text-decoration: none; }
+
+h1, h2, h3, h4 {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	line-height: 120%;
+	font-weight: normal;
+	color: #600;
+}
+
+h1 {
+	font-size: 180%;
+	margin-bottom: 0.2em;
+	margin-left: 5%;
+	text-align: left;
+}
+h2 {
+	font-size: 150%;
+}
+h3 {
+	font-size: 140%;
+}
+h3#metrics{
+	margin-top: 2em;
+}
+
+caption { font-size: 110%; font-weight: bold; }
+fieldset { padding: 10px; background-color: #fff; color: #000; }
+fieldset p { margin: 5px 0px 0px 0px; }
+legend {
+	font-weight: bold;
+	background-color: #fff;
+	color: #000;
+	padding: 2px 4px;
+}
+
+h2, h3, h4, caption {
+	text-align: center;
+}
+
+/* Alterações VVB - 29/10/2008 */
+
+caption#metrics{
+	margin-left: 33%;
+}
+
+/* ----------------------------------------- end VVB*/
+
+p.centro { text-align: center; }
+p.derecha { text-align: right; }
+p.url { text-align: right; margin: 0px; }
+img, a img { border: none; }
+dt { font-weight: bold; }
+.inv { display: none; }
+p.dbbien, p.dbmal {
+	border: 2px outset #ddd;
+	text-align: center;
+	font-weight: bold;
+	padding: 4px;
+	margin: 1em 10%;
+}
+p.dbbien { background-color: #cfc; }
+p.dbmal { background-color: #fcc; }
+p.nota { font-size: 0.9em; margin: 0em 5em 0.5em 5em; color: #900; }
+ol.nota_f { font-size: 0.9em; margin: 0em 0em 1em 10em; color: #900; }
+.small { font-size: 90%; }
+
+div.res { background-color: #fff; color: #000; border: 3px outset #ccc; padding: 1.5em 2em;}
+input.btn { font-size: 0.8em; border: none; background-color: #fed; color: #000; padding: 0px; border: 1px solid #999;}
+
+img.ico {
+	width: 12px;
+	height: 12px;
+}
+img.ico2 {
+	width: 8px;
+	height: 8px;
+}
+img.wcag {
+	width: 88px;
+	height: 31px;
+}
+img.pag {
+	width: 32px;
+	height: 24px;
+}
+img.pag2 {
+	width: 20px;
+	height: 24px;
+}
+img.veren {
+	width: 16px;
+	height: 16px;
+}
+img.minihlp {
+	width: 24px;
+	height: 16px;
+}
+
+dl.bien, dl.mal, dl.duda, dl.na, dl.nose, dl.parcial {
+	padding-bottom: 1em;
+	margin: 3em 2%;
+	border: 1px solid #999;
+}
+/*
+dl.bien dt, dl.mal dt, dl.duda dt, dl.na dt, dl.nose dt, dl.parcial dt {
+	margin: -1em 20% 0px 2%;
+	padding: 4px;
+	border: 1px outset #999;
+	background-repeat: repeat-x;
+	background-position: bottom left;
+	background-color: #fff;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	line-height: 120%;
+	font-weight: bold;
+}
+*/
+dl.bien dt, dl.mal dt, dl.duda dt, dl.na dt, dl.nose dt, dl.parcial dt {
+	margin: -1em 20% 0px 2%;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	line-height: 120%;
+	font-weight: bold;
+}
+dl dt span {
+	padding: 4px 8px;
+	border: 1px outset #999;
+	background-repeat: repeat-x;
+	background-position: bottom left;
+	background-color: #fff;
+}
+div.formdiv {
+	margin-top: 2em;
+	padding: 5px;
+	border: 2px outset #ddd;
+}
+
+dl.bien dd, dl.mal dd, dl.duda dd, dl.na dd, dl.nose dd, dl.parcial dd {
+	padding: 6px;
+	margin: 2px 1em 2px 5em;
+	/*border: 3px inset #ccc;*/
+	font-size: 90%;
+	border: 2px dotted #ccc;
+}
+
+dt.dt_na span { background-image: url('img/deg_na.gif'); }
+dt.dt_duda span { background-image: url('img/deg_duda.gif'); }
+dt.dt_mal span { background-image: url('img/deg_mal.gif'); }
+dt.dt_bien span { background-image: url('img/deg_bien.gif'); }
+dt.dt_parcial span { background-image: url('img/deg_parcial.gif'); }
+dt.dt_nose span { background-image: url('img/deg_nose.gif'); }
+
+dl dd.dd_wcag {
+	color: #000;
+	background: transparent url('img/quotes.gif') top left no-repeat;
+	border: none;
+	margin-top: 1em;
+}
+.dd_wcag blockquote {
+	margin: 4px;
+	padding-left: 18px;
+	padding-right: 18px;
+	font-size: 0.9em;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	line-height: 130%;
+	background: transparent url('img/quotes2.gif') bottom right no-repeat;
+}
+/*
+.dd_wcag blockquote {
+	quotes: "&#8220;" "&#8221;";
+	margin: 0em;
+}
+.dd_wcag blockquote:before { content: open-quote }
+.dd_wcag blockquote:after  { content: close-quote }
+*/
+.na { color: #000; background-color: #f6f6f6; }
+.duda { color: #000; background-color: #eef9ff; }
+.mal { color: #000; background-color: #ffeef6; }
+.bien { color: #000; background-color: #efe; }
+.parcial { color: #000; background-color: #fed; }
+.nose { color: #000; background-color: #fff; }
+
+dl.na { color: #000; background-color: #fcfcfc; }
+dl.duda { color: #000; background-color: #fcfeff; }
+dl.mal { color: #000; background-color: #fff9ff; }
+dl.bien { color: #000; background-color: #fcfffc; }
+dl.parcial { color: #000; background-color: #fffcf9; }
+dl.nose { color: #000; background-color: #fff; }
+
+dd.na, dd.duda, dd.mal, dd.bien, dd.parcial, dd.nose {
+	padding-right: 100px;
+}
+
+dl dd.ico_tool {
+	float: right;
+	border: none;
+	margin: 2px 1em -2px 0px;
+}
+
+dd ul.hlp {
+	margin: 4px;
+	padding: 1em;
+	font-size: 90%;
+	background-color: #fff;
+	color: #000;
+	border: 2px dotted #9cf;
+	list-style-type: none;
+}
+
+dl dd.man, dl dd.form {
+	border: 2px dotted #9cf;
+	padding: 0em 1em 1em 1em;
+	background-color: #fff;
+	color: #000;
+}
+
+div.formdiv {
+	background: #9cf;
+	color: #000;
+	font-size: 90%;
+	margin: 0px 3%;
+}
+
+dd.form textarea, div.formdiv textarea { width: 100%; }
+
+table.totales {
+	background-color: #fff;
+	color : #000;
+	width: 60%;
+	margin-left: 20%;
+	margin-top: 0.5em;
+	margin-bottom: 2em;
+	border: 2px solid #999;
+}
+
+table.totales th {
+	background-color: #666;
+	color: #fff;
+	border: 1px solid #fff;
+	font-size: 90%;
+	padding: 4px;
+	text-align: center;
+	white-space: nowrap;
+}
+table.totales td {
+	text-align: center;
+	border: 1px solid #fff;
+	font-weight: bold;
+	font-size: 120%;
+	padding: 0px;
+	vertical-align: middle;
+	white-space: nowrap;
+}
+
+table.totales th.thpri { background-color: #fff; padding: 0px; }
+table.totales td a { text-decoration: none; }
+table.totales td a:hover { text-decoration: underline; }
+
+/* Alteração VVB - 27/10/2008 */
+
+table.total {
+	background-color: #fff;
+	color : #000;
+	width: 30%;
+	margin-left: 35%;
+	margin-top: 0.5em;
+	margin-bottom: 0.3em;
+	border: 2px solid #999;
+}
+
+table.total th {
+	background-color: #666;
+	color: #fff;
+	border: 1px solid #fff;
+	font-size: 100%;
+	padding: 4px;
+	text-align: center;
+	white-space: nowrap;
+}
+table.total td {
+	text-align: center;
+	border: 1px solid #fff;
+	font-weight: bold;
+	font-size: 100%;
+	padding: 0px;
+	vertical-align: middle;
+	white-space: nowrap;
+}
+
+table.total th.thpri { background-color: #fff; padding: 0px; }
+table.total td a { text-decoration: none; }
+table.total td a:hover { text-decoration: underline; }
+
+/* ----------------------------------------- end VVB*/
+
+
+div#topcod {
+	border-top: 3px outset #eee;
+	background-color: #fff;
+	padding: 0.5em 3% 1.5em 3%;
+	margin: 0em 3% 2em 3%;
+	font-style: italic;
+	color: #666;
+	line-height: 1.6em;
+}
+
+div#topcod code {
+	background-color: #f6f6f6;
+	color: #c00;
+	font-style: normal;
+	font-weight: bold;
+}
+div#topcod span {
+	background-color: #fcf;
+	color: #000;
+	font-style: normal;
+	font-weight: bold;
+	padding: 1px;
+}
+
+div#topcod span.bien {
+	background-color: #CFC;
+}
+div#topcod span.mal {
+	background-color: #FCF;
+}
+div#topcod span.dudabis {
+	background-color: #0FF;
+}
+div#topcod span.duda {
+	background-color: #FF3;
+}
+
+div#topcod span code {
+	background-color: transparent;
+	color: #000;
+}
+
+
+/* Vista de página */
+
+div.sidardiv, div.sidardivno {
+	font: menu !important;
+	text-decoration: none !important;
+	text-align: left !important;
+	padding: 0.5em !important;
+	border: 3px solid #F00 !important;
+	color: #000 !important;
+	background-color: #FF9 !important; 
+}
+
+div.sidardivno {
+	background-color: #FCF !important; 
+}
+
+img.sidarico { border: none !important; }
+
+div#heracss {
+	width: 15px;
+	position:absolute !important;
+	top:0px !important;
+	left:0px !important;
+	z-index:10000 !important;
+}
+
+img#heracssimg {
+	position:absolute !important;
+	top:0px !important;
+	left:0px !important;
+	z-index:10000 !important;
+	border: none !important;
+	width: 15px;
+	height: 15px;
+	display: inline !important;
+}
+img#heracssimg:after, img#heracssimg:before {
+	display: none !important;
+	content: '' !important;
+}
+
+/* Listas con submenú de navegación */
+
+dl.submenu {
+	margin-top: -4px;
+	margin-left: 3%;
+}
+ul.pr_lista { height: 3em; margin-left: 0px; }
+
+dl.submenu dd, ul.pr_lista li {
+	display: inline;
+	float: left;
+	margin: 1px;
+	padding: 0px 4px;
+	/*background-color: #adf;*/
+	background: #adf url('img/esq.gif') top left no-repeat;
+	border-right: 1px solid #999;
+	border-bottom: 1px solid #999;
+	white-space: nowrap;
+}
+
+ul.pr_lista li { padding: 0px 8px; margin: 2px;; }
+
+dl.submenu dd a, ul.pr_lista li a {
+	text-decoration: none;
+	color: #000;
+}
+
+dl.submenu dd.actual {
+	background-color: #000;
+	color: #fff;
+	font-weight: bold;
+	
+}
+
+table.tsubmenu {
+	margin-left: 3%;
+	background-color: #FFF;
+}
+table.tsubmenu th { width: 2em; border: 1px outset #ddd; }
+table.tsubmenu th.pr { text-align: left; font-size: 80%; }
+table.tsubmenu td {
+	text-align: center;
+	border: 1px outset #ddd;
+	padding-right: 6px;
+	padding-left: 3px;
+}
+table.tsubmenu td.tdactual {
+	background-color: #000;
+	color: #fff;
+	font-weight: bold;
+}
+table.tsubmenu td.tdactual a { color: #fff; font-weight: bold; }
+table.tsubmenu td a { text-decoration: none; }
+table.tsubmenu td a:hover { text-decoration: underline; }
+
+.indice {
+	border: thin ridge Green;
+	background-color: #F5FFFA;
+	color: inherit;
+	margin: 2em 2em;
+	padding-left: 0.5em;
+	padding-bottom: 0.5em;
+	padding-right: 1em;
+	padding-top: 0.5em;
+	display: block;
+}
+
+img.der {
+	border: none;
+	float: right;
+	padding-left: 1em;
+}
+
+img.izda {
+	border: none;
+	float: left;
+	padding-right: 1em;
+}
+img.center {
+	border: none;
+	text-align: center;
+}
+div.dona {
+	float: right;
+}
+
+/* Informes HTML */
+
+body#informe div#logo {
+	position: absolute;
+	right: 4px;
+	top: 4px;
+}
+
+body#informe ul#datos {
+	margin-top: 0em;
+	margin-bottom: 3em;
+}
+
+body#informe dl dt {
+	margin-top: 2.5em;
+	border-top: 2px solid #9cf;
+	text-align: justify;
+}
+	
+body#informe dl dt strong {
+	font-family: sans-serif;
+	font-style: normal;
+	font-size: 1.1em;
+	padding: 0px 1em 0px 0.8em;
+	border: 1px solid #9cf;
+	color: #000;
+	background-color: #def;
+}
+	
+body#informe dl dt q {
+	font-family: serif;
+	font-style: italic;
+}
+	
+body#informe dl dd { margin-top: 1em; }
