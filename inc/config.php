@@ -6,7 +6,7 @@ $db_table = 'ariadna';
 $db_host = "localhost";
 $db_name = "hera"; // Nombre de la base de datos
 $db_user = "hera"; // Nombre de usuario
-$db_pw = ""; // Password
+$db_pw = "hera"; // Password
 
 $opt_head = array(
 	'error' => '',

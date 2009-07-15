@@ -44,9 +44,69 @@ class Resumen {
 	function Resumen() {
 	
 		global $mis_puntos, $wcag1, $lst_A, $lst_AA, $lst_AAA, $resultados, $lang;
+		/*RGB begin*/
+		global $emag2, $lst_Aemag, $lst_AAemag, $lst_AAAemag, $wcagToEmag;
+		
+		/*Salvando os valores das variaveis do WCAG, se não forem usadas*/
+		$backup_wcag1 = $wcag1;
+		$backup_mis_puntos = $mis_puntos;
+		
+		if(isset($_POST['choose']))
+		{
+			if($_POST['choose'] == "emag")
+				$wcag1 = $emag2;
+		}
+		/*RGB end*/
 		$resultados = array();
-		$letras = array('A' => 'lst_A', 'AA' => 'lst_AA', 'AAA' => 'lst_AAA');
-
+		
+		/*RGB begin*/
+		$letras = array();
+		
+		/*Mudando as variaveis de prioridades*/
+		if (isset($_POST['choose']))
+		{
+			if($_POST['choose'] == "wcag")
+				$letras = array('A' => 'lst_A', 'AA' => 'lst_AA', 'AAA' => 'lst_AAA');
+			else if($_POST['choose'] == "emag")
+			{
+				$letras = array('A' => 'lst_Aemag', 'AA' => 'lst_AAemag', 'AAA' => 'lst_AAAemag');
+				
+				/*Alocando novo $mis_puntos*/
+				$mis_puntos = array();
+				
+				foreach($backup_mis_puntos as $bak => $conteudo)
+				{
+					/*vericando tabela de mapeamento*/
+					if (isset($wcagToEmag[$bak]))
+					{
+						/*verificando se existe um mapeamento valido*/
+						if($wcagToEmag[$bak] != 0)
+						{
+							/*verificando se ja existe um valor associado*/
+							if(isset($mis_puntos[$wcagToEmag[$bak]]))
+							{
+								/*Se o atual é mal, então todos correspondentes também serão*/
+								if($conteudo == "mal")
+									$mis_puntos[$wcagToEmag[$bak]] = "mal";
+								else
+								{
+									/*Se o atual é duda, verificar se o valor prévio é bien para substituição*/
+									if($conteudo == "duda")
+									{
+										if($mis_puntos[$wcagToEmag[$bak]] == "bien")
+											$mis_puntos[$wcagToEmag[$bak]] = "duda";
+									}
+								}
+							}
+							else
+								$mis_puntos[$wcagToEmag[$bak]] = $conteudo;
+						}
+					}
+				}
+			}
+		}
+		/*RGB end*/
+		
 		foreach ($letras as $p => $arr) {
 			foreach ($$arr as $k => $v) {
 				if (array_key_exists($v, $wcag1)) {
@@ -72,7 +132,12 @@ class Resumen {
 			}
 			$this->accesibilidad = ' <img src="img/her_'.$ico_acc.'.gif" alt="'.sprintf($lang['ico_hera_acc'], $ico_acc).'" width="90" height="30" style="float:right" />';
 		}
-
+		
+		/*RGB begin*/
+		/*Retornando os valores das variaveis*/
+		$wcag1 = $backup_wcag1;
+		$mis_puntos = $backup_mis_puntos;
+		/*RGB end*/
 	} // End function Resumen
 
 /*===============================*\
@@ -86,6 +151,9 @@ class Resumen {
 		// ----------------------------------------- end VVB
 
 		global $totales, $lang, $wcag, $param, $marcos, $fecha, $nombre, $lang, $software;
+		/*RGB begin*/
+		global $emag;
+		/*RGB end*/
 		$note_a = '<p class="nota"><img src="img/nota.gif" alt="'.$lang['ico_alt_aviso'].'" class="ico" /> ';
 		$note_b = "</p>\n";
 
@@ -204,6 +272,7 @@ class Resumen {
 ?>
 </table>
 
+<?php /*Necessário Alterar - RGB*/ ?>
 <h3><?php echo $lang['h3_nav_pautas']; ?></h3>
 <p><em><?php echo $lang['p_nav_pautas']; ?></em></p>
 <ul class="pr_lista">
@@ -214,6 +283,7 @@ class Resumen {
 		}
 ?>
 </ul>
+<? /*Fim alteração - RGB*/ ?>
 
 <? // Alteração VVB - 28/10/2008 ?>
 

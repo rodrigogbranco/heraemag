@@ -1,0 +1,14 @@
+inclusão do arquivo lang/pt/emag.php
+
+inc/main.php:
+- linha 12:
+	inclusão: require_once("lang/".IDIOMA."/emag.php");
+
+inc/header.php:
+- linha 9: 
+	de   <link href="../estilos.css" type="text/css" rel="stylesheet" />
+	para <link href="estilos.css" type="text/css" rel="stylesheet" />
+
+inc/common.php
+- linhas 133 a 134:
+	inclusão das variáveis $emag2, $lst_Aemag, $lst_AAemag e $lst_AAAemag, para controle das diretrizes do emag2.0
