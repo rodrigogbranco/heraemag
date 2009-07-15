@@ -6,7 +6,9 @@
 <head>
 <title><?php _Title($opt_head); ?></title>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<link href="../estilos.css" type="text/css" rel="stylesheet" />
+<?php /*RGB begin*/ ?>
+<link href="estilos.css" type="text/css" rel="stylesheet" />
+<?php /*RGB end*/ ?>
 <link rel="icon" href="<?php echo WEBSITE; ?>img/favicon.ico" type="image/x-icon" />
 <script type="text/javascript" src="<?php echo WEBSITE; ?>display.js"></script>
 <?php _Idiomas(); ?>
@@ -121,6 +123,11 @@ function _Form($opt) {
 				echo '<strong>'.$lang['bc_error'].': '.$opt['error']."</strong><br /><br />\n";
 			}
 ?>
+<?php /*RGB begin*/ ?>
+<input type="radio" name="choose" value="wcag" checked="true"><strong>WCAG 1.0</strong>
+<input type="radio" name="choose" value="emag"><strong>eMag 2.0</strong>
+<br>
+<?php /*RGB end*/ ?>
 <label for="url"><?php echo $lang['frm_url']; ?>
 <input type="text" name="url" id="url" value="http://" size="60" /></label> <input type="submit" name="btns" id="btns" value="<?php echo $lang['frm_boton']; ?>" /> 
 <?php

@@ -9,11 +9,15 @@ session_start();
 require_once('inc/config.php'); // Config file
 require_once('lang/'.IDIOMA.'/lang.php'); // Interface texts
 require_once("lang/".IDIOMA."/wcag.php"); // Guidelines texts
+/*RGB begin*/
+require_once("lang/".IDIOMA."/emag.php"); //Guidelines texts and transformation for eMag 2.0
+/*RGB end*/
 require_once ("inc/common.php"); // Some core libraries
 require_once('inc/resumen.php'); // Class to build the summary of results
 cleanAll();
 
 if (!empty($_REQUEST['url'])) {  // An URI is sent
+			
 	$tags = array(); // Page tags
 	$contents = array(); // Page content
 
@@ -31,7 +35,6 @@ if (!empty($_REQUEST['url'])) {  // An URI is sent
 
 	require_once('inc/file.php');
 	$File = new File(urldecode($url_tmp), $_SERVER['HTTP_USER_AGENT']);
-
 	if ($File->error == '') {
 		if (!$File->fetch($File->uri_real, 'base', 'arry')) {
 		// The target page could not be read
@@ -54,7 +57,6 @@ if (!empty($_REQUEST['url'])) {  // An URI is sent
 		include_once('inc/pages.php');
 
 	} else { // No error
-
 		if ($_SESSION['uri_anterior']) {
 			if (!defined(HID) && isset($_SESSION['ultimo_id'])) {
 				define ('HID', (int)$_SESSION['ultimo_id']);
@@ -64,7 +66,6 @@ if (!empty($_REQUEST['url'])) {  // An URI is sent
 		require_once ("inc/parse.php");
 		$New_Parse = new Parse;
 		$New_Parse->This_Page($url_redir, $meta_redir);
-
 		if (defined('ID')) { // Parse page was successful
 			$param = '?id='.(int)ID;
 			$opt_head['bread'] = 'resumen';
