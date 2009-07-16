@@ -1,5 +1,10 @@
 <?php
 if(!defined('WEBSITE')){die();}
+require_once('lang/'.IDIOMA.'/help.php');
+require_once('lang/'.IDIOMA.'/manual.php');
+require_once('lang/'.IDIOMA.'/elem.php');
+require_once('lang/'.IDIOMA.'/info.php');
+require_once('lang/'.IDIOMA.'/view.php');
 /*=======================================
   HERA v.2.0 Beta                        
   File: inc/common.php                   
@@ -1154,4 +1159,79 @@ function cleanAll(){
 	if(!empty($_POST)) cleanStr($_POST);
 	if(!empty($_GET)) cleanStr($_GET);
 }
+
+/*RGB begin*/
+function changeVariables()
+{
+		global $mis_puntos, $wcag1, $lst_A, $lst_AA, $lst_AAA;
+		global $emag2, $lst_Aemag, $lst_AAemag, $lst_AAAemag, $wcagToEmag, $mis_puntos_original;
+		global $wcag, $emag, $elem, $manual, $help, $info, $view;
+		
+		$mis_puntos_original = $mis_puntos;
+		$backup_elem = $elem;
+		$backup_manual = $manual;
+		$backup_help = $help;
+		$backup_info = $info;
+		$backup_view = $view;
+		/*Mudando as variaveis de prioridades*/
+		if (isset($_POST['choose']))
+		{
+			if($_POST['choose'] == "emag")
+			{
+				$wcag1 = $emag2;
+				$wcag = $emag;
+				$lst_A = $lst_Aemag;
+				$lst_AA = $lst_AAemag;
+				$lst_AAA = $lst_AAAemag;
+				/*Alocando novas variaveis*/
+				$mis_puntos = array();
+				$elem = array();
+				$manual = array();
+				$help = array();
+				$info = array();
+				$view = array();
+				
+				foreach($mis_puntos_original as $bak => $conteudo)
+				{
+					/*vericando tabela de mapeamento*/
+					if (isset($wcagToEmag[$bak]))
+					{
+						/*verificando se existe um mapeamento valido*/
+						if($wcagToEmag[$bak] != 0)
+						{
+							/*verificando se ja existe um valor associado*/
+							if(isset($mis_puntos[$wcagToEmag[$bak]]))
+							{
+								/*Se o atual é mal, então todos correspondentes também serão*/
+								if($conteudo == "mal")
+									$mis_puntos[$wcagToEmag[$bak]] = "mal";
+								else
+								{
+									/*Se o atual é duda, verificar se o valor prévio é bien para substituição*/
+									if($conteudo == "duda")
+									{
+										if($mis_puntos[$wcagToEmag[$bak]] == "bien")
+											$mis_puntos[$wcagToEmag[$bak]] = "duda";
+									}
+								}
+							}
+							else
+								$mis_puntos[$wcagToEmag[$bak]] = $conteudo;							
+							
+							if (isset($backup_elem[$bak]))
+								$elem[$wcagToEmag[$bak]] = $backup_elem[$bak];
+							if (isset($backup_view[$bak]))
+								$view[$wcagToEmag[$bak]] = $backup_view[$bak];
+							if (isset($backup_manual[$bak]))
+								$manual[$wcagToEmag[$bak]] = $backup_manual[$bak];
+							if (isset($backup_help[$bak]))
+								$help[$wcagToEmag[$bak]] = $backup_help[$bak];
+						}
+					}
+				}
+			}
+		}
+		/*RGB end*/
+}
+/*RGB end*/
 ?>
