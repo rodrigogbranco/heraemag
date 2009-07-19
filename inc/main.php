@@ -8,7 +8,7 @@ session_start();
 // Includes some necesary files
 require_once('inc/config.php'); // Config file
 /*RGB begin*/
-require_once("lang/".IDIOMA."/emag.php"); //Guidelines texts and transformation for eMag 2.0
+include_once("lang/".IDIOMA."/emag.php");
 /*RGB end*/
 require_once('lang/'.IDIOMA.'/lang.php'); // Interface texts
 require_once("lang/".IDIOMA."/wcag.php"); // Guidelines texts
@@ -16,8 +16,14 @@ require_once ("inc/common.php"); // Some core libraries
 require_once('inc/resumen.php'); // Class to build the summary of results
 cleanAll();
 
+/*RGB begin*/
+if(isset($_POST['choose']))
+	$_SESSION['choose'] = $_POST['choose'];
+/*RGB end*/
+
+$variables = null;
+
 if (!empty($_REQUEST['url'])) {  // An URI is sent
-			
 	$tags = array(); // Page tags
 	$contents = array(); // Page content
 
@@ -35,6 +41,7 @@ if (!empty($_REQUEST['url'])) {  // An URI is sent
 
 	require_once('inc/file.php');
 	$File = new File(urldecode($url_tmp), $_SERVER['HTTP_USER_AGENT']);
+
 	if ($File->error == '') {
 		if (!$File->fetch($File->uri_real, 'base', 'arry')) {
 		// The target page could not be read
@@ -57,6 +64,7 @@ if (!empty($_REQUEST['url'])) {  // An URI is sent
 		include_once('inc/pages.php');
 
 	} else { // No error
+
 		if ($_SESSION['uri_anterior']) {
 			if (!defined(HID) && isset($_SESSION['ultimo_id'])) {
 				define ('HID', (int)$_SESSION['ultimo_id']);
@@ -66,6 +74,7 @@ if (!empty($_REQUEST['url'])) {  // An URI is sent
 		require_once ("inc/parse.php");
 		$New_Parse = new Parse;
 		$New_Parse->This_Page($url_redir, $meta_redir);
+
 		if (defined('ID')) { // Parse page was successful
 			$param = '?id='.(int)ID;
 			$opt_head['bread'] = 'resumen';
@@ -74,7 +83,7 @@ if (!empty($_REQUEST['url'])) {  // An URI is sent
 			include_once('inc/header.php');
 			
 			DB_Query('select', 'todo');
-			$New_Resumen = new Resumen();
+			$New_Resumen = new Resumen;
 			$New_Resumen->Results();
 
 		} else { // Parse page fails
@@ -109,7 +118,7 @@ if (!empty($_REQUEST['url'])) {  // An URI is sent
 			DB_Query('update');
 		}
 
-		$New_Resumen = new Resumen();
+		$New_Resumen = new Resumen;
 		$opt_head['form'] = URL;
 
 		if ($_REQUEST['pt']) { // Check a guideline

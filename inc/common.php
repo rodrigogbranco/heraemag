@@ -1,10 +1,11 @@
 <?php
 if(!defined('WEBSITE')){die();}
-require_once('lang/'.IDIOMA.'/help.php');
-require_once('lang/'.IDIOMA.'/manual.php');
-require_once('lang/'.IDIOMA.'/elem.php');
-require_once('lang/'.IDIOMA.'/info.php');
-require_once('lang/'.IDIOMA.'/view.php');
+include_once('lang/'.IDIOMA.'/help.php');
+include_once('lang/'.IDIOMA.'/manual.php');
+include_once('lang/'.IDIOMA.'/elem.php');
+include_once('lang/'.IDIOMA.'/info.php');
+include_once('lang/'.IDIOMA.'/view.php');
+include_once('lang/'.IDIOMA.'/wcag.php');
 /*=======================================
   HERA v.2.0 Beta                        
   File: inc/common.php                   
@@ -141,7 +142,6 @@ $lst_Aemag = array(11, 12, 13, 14, 15, 16, 17, 18, 19, 110, 111, 112, 113, 114, 
 $lst_AAemag = array(21, 22, 23, 24, 25, 26, 27, 28, 29, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219);
 $lst_AAAemag = array(31, 32, 33, 34, 35, 36, 37, 38, 39, 310, 311, 312, 313, 314);
 /*RGB end*/
-
 
 /*=====================================================
 	Function: Make an absolute URI from a relative one  
@@ -1160,6 +1160,8 @@ function cleanAll(){
 	if(!empty($_GET)) cleanStr($_GET);
 }
 
+
+
 /*RGB begin*/
 function changeVariables()
 {
@@ -1174,9 +1176,9 @@ function changeVariables()
 		$backup_info = $info;
 		$backup_view = $view;
 		/*Mudando as variaveis de prioridades*/
-		if (isset($_POST['choose']))
+		if (isset($_SESSION['choose']))
 		{
-			if($_POST['choose'] == "emag")
+			if($_SESSION['choose'] == "emag")
 			{
 				$wcag1 = $emag2;
 				$wcag = $emag;
