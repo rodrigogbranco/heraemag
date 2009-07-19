@@ -32,6 +32,7 @@ class Resumen {
 	var $t_parcial = 0;
 	var $t_nose = 0;
 	var $accesibilidad = '';
+	var $teste;
 
 /*====================================================*\
 	Function: Total results by priorities                
@@ -39,20 +40,20 @@ class Resumen {
 	checkpoints of priority 'AAA'- result 'cannot tell'  
 \*====================================================*/
 
-	function __construct()
-	{
-		changeVariables();
-	}
-
 
 	function Resumen() {
+		/*RGB begin*/
+		if (!$variables)
+		{
+			changeVariables();
+			$variables = 1;
+		}
+		/*RGB end*/
 	
 		global $mis_puntos, $wcag1, $lst_A, $lst_AA, $lst_AAA, $resultados, $lang;
-		
 		$resultados = array();
-		
 		$letras = array('A' => 'lst_A', 'AA' => 'lst_AA', 'AAA' => 'lst_AAA');
-		
+
 		foreach ($letras as $p => $arr) {
 			foreach ($$arr as $k => $v) {
 				if (array_key_exists($v, $wcag1)) {
@@ -78,6 +79,7 @@ class Resumen {
 			}
 			$this->accesibilidad = ' <img src="img/her_'.$ico_acc.'.gif" alt="'.sprintf($lang['ico_hera_acc'], $ico_acc).'" width="90" height="30" style="float:right" />';
 		}
+
 	} // End function Resumen
 
 /*===============================*\
@@ -85,15 +87,21 @@ class Resumen {
 \*===============================*/
 
 	function Results() {
+
+		/*RGB begin*/
+		if (!$variables)
+		{
+			changeVariables();
+			$variables = 1;
+		}
+		/*RGB end*/
+
 	
 		// Alteração VVB - 28/10/2008
 		$results = Obter_Resultados();
 		// ----------------------------------------- end VVB
 
 		global $totales, $lang, $wcag, $param, $marcos, $fecha, $nombre, $lang, $software;
-		/*RGB begin*/
-		global $emag;
-		/*RGB end*/
 		$note_a = '<p class="nota"><img src="img/nota.gif" alt="'.$lang['ico_alt_aviso'].'" class="ico" /> ';
 		$note_b = "</p>\n";
 
@@ -212,7 +220,6 @@ class Resumen {
 ?>
 </table>
 
-<?php /*Necessário Alterar - RGB*/ ?>
 <h3><?php echo $lang['h3_nav_pautas']; ?></h3>
 <p><em><?php echo $lang['p_nav_pautas']; ?></em></p>
 <ul class="pr_lista">
@@ -223,7 +230,6 @@ class Resumen {
 		}
 ?>
 </ul>
-<? /*Fim alteração - RGB*/ ?>
 
 <? // Alteração VVB - 28/10/2008 ?>
 
@@ -286,6 +292,15 @@ class Resumen {
 \*================================================*/
 
 	function Navega($by) {
+
+		/*RGB begin*/
+		if (!$variables)
+		{
+			changeVariables();
+			$variables = 1;
+		}
+		/*RGB end*/
+
 		global $lang, $param;
 
 		if ($by == 'pauta') {

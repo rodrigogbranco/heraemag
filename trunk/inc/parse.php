@@ -1173,7 +1173,7 @@ class Parse {
 	Return the ID                   
 =================================*/
 
-	function Finalizar() {		
+	function Finalizar() {
 		$time_end = Get_MTime();
 		$time = $time_end - TIME_START;
 		$this->tot['tiempo'] = round($time,2);

@@ -1,8 +1,8 @@
 <?php
 if(!defined('IDIOMA')){die();}
-//require('lang/'.IDIOMA.'/help.php');
-//require('lang/'.IDIOMA.'/manual.php');
-//require('lang/'.IDIOMA.'/elem.php');
+require('lang/'.IDIOMA.'/help.php');
+require('lang/'.IDIOMA.'/manual.php');
+require('lang/'.IDIOMA.'/elem.php');
 
 if (AN == 1) {
 	echo '<form action="'.PHP_SELF.'" id="formr" method="post">'."\n";
