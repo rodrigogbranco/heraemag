@@ -43,6 +43,7 @@ class Resumen {
 
 	function Resumen() {
 		/*RGB begin*/
+		global $variables;
 		if (!$variables)
 		{
 			changeVariables();
@@ -87,8 +88,8 @@ class Resumen {
 \*===============================*/
 
 	function Results() {
-
 		/*RGB begin*/
+		global $variables;
 		if (!$variables)
 		{
 			changeVariables();
@@ -292,8 +293,8 @@ class Resumen {
 \*================================================*/
 
 	function Navega($by) {
-
 		/*RGB begin*/
+		global $variables;
 		if (!$variables)
 		{
 			changeVariables();
