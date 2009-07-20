@@ -223,4 +223,9 @@ $lang['txt_a_code'] = 'Código';
 $lang['txt_tit_mail'] = 'Mensagem à equipa do HERA.';
 $lang['txt_a_mail'] = 'Contacto';
 $lang['formato_fecha'] = 'd/m/Y - G:i \G\M\T';
+
+/*RGB begin*/
+$choose['wcag'] = 'WCAG 1.0';
+$choose['emag'] = 'eMag 2.0';
+/*RGB end*/
 ?>

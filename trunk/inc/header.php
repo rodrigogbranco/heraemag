@@ -44,18 +44,22 @@ if ($opt_head['bar'] == '') {
 
 function _Title($opt) {
 	global $lang;
+	/*RGB begin*/
+	global $choose;
+	/*RGB end*/
+	
 	if ($opt['bread'] != '') {
 		if ($opt['bread'] == 'pagina_informe') {
 			echo $lang['informe_html_tit'];
 		} else {
 			if (PT > 0) {
-				echo sprintf($lang['tit_pauta'], PT);
+				echo sprintf($lang['tit_pauta']." - ".$choose[$_SESSION['choose']], PT);
 			} else if (PR > 0) {
-				echo sprintf($lang['tit_priori'], PR);
+				echo sprintf($lang['tit_priori']." - ".$choose[$_SESSION['choose']], PR);
 			} else if (IN > 0) {
 				echo $lang['bc_info'];
 			} else {
-				echo $lang['tit_resumen'];
+				echo $lang['tit_resumen']." - ".$choose[$_SESSION['choose']];
 				if ($opt['error'] != '') {
 					echo ' - '.$lang['bc_error'];
 				}
