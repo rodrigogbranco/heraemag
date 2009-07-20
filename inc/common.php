@@ -1,11 +1,5 @@
 <?php
 if(!defined('WEBSITE')){die();}
-include_once('lang/'.IDIOMA.'/help.php');
-include_once('lang/'.IDIOMA.'/manual.php');
-include_once('lang/'.IDIOMA.'/elem.php');
-include_once('lang/'.IDIOMA.'/info.php');
-include_once('lang/'.IDIOMA.'/view.php');
-include_once('lang/'.IDIOMA.'/wcag.php');
 /*=======================================
   HERA v.2.0 Beta                        
   File: inc/common.php                   
@@ -137,10 +131,10 @@ $lst_AA = array(22, 31, 32, 33, 34, 35, 36, 37, 53, 54, 64, 65 , 72, 73, 74, 75,
 $lst_AAA = array(15, 42, 43, 55, 56, 94, 95, 103, 104, 105, 113, 135, 136, 137, 138, 139, 1310, 142, 143);
 
 /*RGB begin*/
-$emag2 = array(11 => '1.1', 12 => '1.2', 13 => '1.3', 14 => '1.4', 15 => '1.5', 16 => '1.6', 17 => '1.7', 18 => '1.8', 19 => '1.9', 110 => '1.10', 111 => '1.11', 112 => '1.12', 113 => '1.13', 114 => '1.14', 115 => '1.15', 116 => '1.16', 117 => '1.17', 118 => '1.18', 119 => '1.19', 120 => '1.20', 121 => '1.21', 122 => '1.22', 123 => '1.23', 124 => '1.24', 21 => '2.1', 22 => '2.2', 23 => '2.3', 24 => '2.4', 25 => '2.5', 26 => '2.6', 27 => '2.7', 28 => '2.8', 29 => '2.9', 210 => '2.10', 211 => '2.11', 212 => '2.12', 213 => '2.13', 214 => '2.14', 215 => '2.15', 216 => '2.16', 217 => '2.17', 218 => '2.18', 219 => '2.19', 31 => '3.1', 32 => '3.2', 33 => '3.3', 34 => '3.4', 35 => '3.5', 36 => '3.6', 37 => '3.7', 38 => '3.8', 39 => '3.9', 310 => '3.10', 311 => '3.11', 312 => '3.12', 313 => '3.13', 314 => '3.14');
-$lst_Aemag = array(11, 12, 13, 14, 15, 16, 17, 18, 19, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124);
-$lst_AAemag = array(21, 22, 23, 24, 25, 26, 27, 28, 29, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219);
-$lst_AAAemag = array(31, 32, 33, 34, 35, 36, 37, 38, 39, 310, 311, 312, 313, 314);
+$emag2 = array(11 => '1.11', 12 => '1.12', 14 => '1.22', 21 => '1.4', 22 => '1.5', 31 => '2.7', 32 => '2.1', 33 => '2.12', 34 => '2.2', 35 => '2.10', 36 => '.23', 37 => '2.8', 41 => '1.2', 42 => '3.2', 43 => '1.1', 52 => '1.14', 53 => '2.12', 54 => '2.13', 55 => '1.13', 56 => '3.2', 61 => '1.6', 62 => '1.15', 63 => '1.20', 64 => '1.19', 65 => '1.16', 71 => '1.7', 72 => '1.7', 73 => '12.3', 74 => '2.4', 75 => '2.5', 81 => '2.18', 92 => '2.18', 93 => '2.19', 94 => '1.8', 95 => '3.3', 101 => '2.6', 102 => '2.16', 104 => '2.14', 105 => '3.4', 112 => '3.1', 113 => '3.5', 114 => '1.24', 121 => '1.17',  122 => '1.18', 123 => '2.11', 124 => '2.15', 131 => '3.12', 132 => '3.14', 133 => '2.17', 134 => '1.10', 135 => '3.6', 136 => '3.7', 137 => '3.8', 138 => '3.9', 139 => '3.10', 1310 => '1.3', 141 => '1.9', 142 => '3.11', 143 => '2.9');
+$lst_Aemag = array(11, 12, 14, 21, 22, 41, 43, 52, 55, 61, 62, 63, 65, 71, 72, 73, 94, 114, 121, 122, 134, 1310, 141);
+$lst_AAemag = array(32, 34, 36, 74, 75, 101, 31, 37, 143, 35, 123, 33, 53, 54, 104, 124, 102, 133, 81, 92, 93);
+$lst_AAAemag = array(112, 42, 56, 95, 105, 113, 135, 136, 137, 138, 139, 142, 131, 132);
 /*RGB end*/
 
 /*=====================================================
@@ -1165,34 +1159,26 @@ function cleanAll(){
 /*RGB begin*/
 function changeVariables()
 {
-		global $mis_puntos, $wcag1, $lst_A, $lst_AA, $lst_AAA;
-		global $emag2, $lst_Aemag, $lst_AAemag, $lst_AAAemag, $wcagToEmag, $mis_puntos_original;
-		global $wcag, $emag, $elem, $manual, $help, $info, $view;
+		global $mis_puntos, $puntos, $wcag1, $lst_A, $lst_AA, $lst_AAA;
+		global $emag2, $lst_Aemag, $lst_AAemag, $lst_AAAemag, $wcagToEmag;
+		global $wcag, $emag;
 		
-		$mis_puntos_original = $mis_puntos;
-		$backup_elem = $elem;
-		$backup_manual = $manual;
-		$backup_help = $help;
-		$backup_info = $info;
-		$backup_view = $view;
 		/*Mudando as variaveis de prioridades*/
 		if (isset($_SESSION['choose']))
 		{
 			if($_SESSION['choose'] == "emag")
 			{
 				$wcag1 = $emag2;
-				$wcag = $emag;
 				$lst_A = $lst_Aemag;
 				$lst_AA = $lst_AAemag;
 				$lst_AAA = $lst_AAAemag;
-				/*Alocando novas variaveis*/
+				$mis_puntos_original = $mis_puntos;
+				$puntos_original = $puntos;
+				$wcag = array();
 				$mis_puntos = array();
-				$elem = array();
-				$manual = array();
-				$help = array();
-				$info = array();
-				$view = array();
+				$puntos = array();
 				
+				/*Alocando novas variaveis*/
 				foreach($mis_puntos_original as $bak => $conteudo)
 				{
 					/*vericando tabela de mapeamento*/
@@ -1201,39 +1187,24 @@ function changeVariables()
 						/*verificando se existe um mapeamento valido*/
 						if($wcagToEmag[$bak] != 0)
 						{
-							/*verificando se ja existe um valor associado*/
-							if(isset($mis_puntos[$wcagToEmag[$bak]]))
-							{
-								/*Se o atual é mal, então todos correspondentes também serão*/
-								if($conteudo == "mal")
-									$mis_puntos[$wcagToEmag[$bak]] = "mal";
-								else
-								{
-									/*Se o atual é duda, verificar se o valor prévio é bien para substituição*/
-									if($conteudo == "duda")
-									{
-										if($mis_puntos[$wcagToEmag[$bak]] == "bien")
-											$mis_puntos[$wcagToEmag[$bak]] = "duda";
-									}
-								}
-							}
-							else
-								$mis_puntos[$wcagToEmag[$bak]] = $conteudo;							
-							
-							if (isset($backup_elem[$bak]))
-								$elem[$wcagToEmag[$bak]] = $backup_elem[$bak];
-							if (isset($backup_view[$bak]))
-								$view[$wcagToEmag[$bak]] = $backup_view[$bak];
-							if (isset($backup_manual[$bak]))
-								$manual[$wcagToEmag[$bak]] = $backup_manual[$bak];
-							if (isset($backup_help[$bak]))
-								$help[$wcagToEmag[$bak]] = $backup_help[$bak];
+							$wcag[$bak] = $emag[$wcagToEmag[$bak]];
+							$mis_puntos[$bak] = $conteudo;
 						}
+					}
+				}
+				
+				foreach($puntos_original as $bak => $conteudo)
+				{
+					/*vericando tabela de mapeamento*/
+					if (isset($wcagToEmag[$bak]))
+					{
+						/*verificando se existe um mapeamento valido*/
+						if($wcagToEmag[$bak] != 0)
+							$puntos[$bak] = $conteudo;
 					}
 				}
 			}
 		}
-		/*RGB end*/
 }
 /*RGB end*/
 ?>
