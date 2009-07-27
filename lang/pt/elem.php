@@ -95,4 +95,6 @@ $elem['1310'] = 'Arte ASCII';
 $elem['141'] = 'Linguagem';
 $elem['142'] = 'Complementos do texto';
 $elem['143'] = 'Apresentação';
+/*eMag elements*/
+$elem['313'] = 'Campos de formulários';
 ?>

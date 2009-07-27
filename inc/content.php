@@ -1163,6 +1163,18 @@ class checkpoint {
 			$this->Punto($mis_puntos[143],$elem[143],Info(1,'chk'),143);
 		}
 	break;
+	//eMag points
+	/*RGB begin*/
+	case 313:
+		if (($puntos[313]=='duda')&&(($z==0)||($z==2))) {
+			$this->Punto('duda',$elem[313],Info(313,'duda'),313);
+		} else if (($puntos[313]=='na')&&(($z==0)||($z==4))) {
+			$this->Punto('na',$elem[313],Info(313,'na'),313);
+		} else if ($this->dif == 1) {
+			$this->Punto($mis_puntos[313],$elem[313],Info(1,'chk'),313);
+		}
+	break;
+	/*RGB end*/
 } // Fin switch
 
 		// Formulario
