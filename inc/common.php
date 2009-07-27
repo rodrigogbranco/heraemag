@@ -1211,10 +1211,6 @@ function changeVariables()
 							$puntos[$bak] = $conteudo;
 					}
 				}
-				
-				$mis_puntos[313] = 'duda';
-				$puntos[313] = 'duda';
-				$wcag[313] = $emag[313];
 			}
 		}
 }

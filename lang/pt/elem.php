@@ -96,5 +96,5 @@ $elem['141'] = 'Linguagem';
 $elem['142'] = 'Complementos do texto';
 $elem['143'] = 'Apresentação';
 /*eMag elements*/
-$elem['313'] = 'Campos de formulários';
+$elem['313'] = 'Elementos de formulários';
 ?>

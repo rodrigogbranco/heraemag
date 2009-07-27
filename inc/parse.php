@@ -34,7 +34,7 @@ class Parse {
 		$asoc_td = array('axis','headers','scope');
 		$atributos = array('title', 'lang', 'style', 'class', 'accesskey', 'charset', 'tabindex', 'target');
 		$eventos = array('onload', 'onfocus', 'onblur', 'onsubmit', 'onreset', 'onselect', 'onchange', 'onunload', 'onclick', 'onmousedown', 'onmouseup', 'onkeypress', 'onkeydown', 'onkeyup', 'ondblclick', 'onmousemove', 'onmouseover', 'onmouseout');
-		$items_na = array(1101, 1102, 1103, 1104, 1105, 1106, 1107, 1108, 1109, 1110, 1111, 11, 12, 1301, 1302, 1303, 13, 1401, 1402, 1403, 14, 15, 3202, 51, 52, 54, 55, 56, 61, 6201, 6202, 62, 6301, 6302, 6303, 6304, 63, 64, 6501, 6502, 65, 8101, 8102, 8103, 8104, 81, 91, 9201, 9202, 92, 93, 102, 103, 104, 105, 121, 122, 124, 131);
+		$items_na = array(1101, 1102, 1103, 1104, 1105, 1106, 1107, 1108, 1109, 1110, 1111, 11, 12, 1301, 1302, 1303, 13, 1401, 1402, 1403, 14, 15, 3202, 51, 52, 54, 55, 56, 61, 6201, 6202, 62, 6301, 6302, 6303, 6304, 63, 64, 6501, 6502, 65, 8101, 8102, 8103, 8104, 81, 91, 9201, 9202, 92, 93, 102, 103, 104, 105, 121, 122, 124, 131, /*eMag*/ 313 /*eMag*/);
 		foreach ($items_na as $res) {
 			$this->pto[$res] = 'na';
 		}
@@ -73,6 +73,15 @@ class Parse {
 	switch ($elem) {
 	case '!doctype':
 		$this->tot['dtd'] = htmlspecialchars($tag);
+	break;
+	
+	/*eMag action*/
+	case 'form':
+		if(isset($_SESSION['choose']))
+		{
+			if($_SESSION['choose'] == 'emag')
+				$this->pto[313] = 'duda';
+		}
 	break;
 
 	case 'a':
