@@ -125,7 +125,7 @@ $wcagToEmag[10101] = 2601;
 $wcagToEmag[10102] = 2602;
 $wcagToEmag[11201] = 3101;
 $wcagToEmag[11202] = 3102;
-//OBS: $wcagToEmag[x] = 313;
+$wcagToEmag[313] = 313;
 
 $emag[10] = 'Fornece alternativas equivalentes para o conteúdo gráfico e sonoro.';
 $emag[20] = 'Assegure-se de que seu sítio seja legível e compreensível mesmo sem o uso de formatações.';

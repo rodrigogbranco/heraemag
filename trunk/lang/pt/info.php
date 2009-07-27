@@ -212,4 +212,6 @@ $info['p1310_duda'] = 'Verifique que se proporciona um meio para saltar sobre um
 $info['p141_duda'] = 'Verifique que se utiliza a linguagem mais clara e fácil adequada ao conteúdo do sítio Web e perceptível pelo utilizador alvo.';
 $info['p142_duda'] = 'Verifique se se complementa o texto com apresentações gráficas ou sonoras.';
 $info['p143_duda'] = 'Verifique se o estilo de apresentação é consistente em todas as páginas.';
+/*eMag info's*/
+$info['p313_duda'] = 'Teste 3.13 duda';
 ?>
