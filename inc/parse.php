@@ -16,6 +16,11 @@ class Parse {
 	var $res_11_mal = 0;
 	var $res_11_duda = 0;
 	var $elem_prog = 0;
+	/*eMag variables*/
+	var $res_111_mal = 0;
+	var $res_111_duda = 0;
+	var $res_121_mal = 0;
+	var $res_121_duda = 0;
 
 	function This_Page($redir="", $meta="") {
 		global $tags, $contents;
@@ -34,9 +39,32 @@ class Parse {
 		$asoc_td = array('axis','headers','scope');
 		$atributos = array('title', 'lang', 'style', 'class', 'accesskey', 'charset', 'tabindex', 'target');
 		$eventos = array('onload', 'onfocus', 'onblur', 'onsubmit', 'onreset', 'onselect', 'onchange', 'onunload', 'onclick', 'onmousedown', 'onmouseup', 'onkeypress', 'onkeydown', 'onkeyup', 'ondblclick', 'onmousemove', 'onmouseover', 'onmouseout');
-		$items_na = array(1101, 1102, 1103, 1104, 1105, 1106, 1107, 1108, 1109, 1110, 1111, 11, 12, 1301, 1302, 1303, 13, 1401, 1402, 1403, 14, 15, 3202, 51, 52, 54, 55, 56, 61, 6201, 6202, 62, 6301, 6302, 6303, 6304, 63, 64, 6501, 6502, 65, 8101, 8102, 8103, 8104, 81, 91, 9201, 9202, 92, 93, 102, 103, 104, 105, 121, 122, 124, 131, /*eMag*/ 313 /*eMag*/);
+		$items_na = array(1101, 1102, 1103, 1104, 1105, 1106, 1107, 1108, 1109, 1110, 1111, 11, 12, 1301, 1302, 1303, 13, 1401, 1402, 1403, 14, 15, 3202, 51, 52, 54, 55, 56, 61, 6201, 6202, 62, 6301, 6302, 6303, 6304, 63, 64, 6501, 6502, 65, 8101, 8102, 8103, 8104, 81, 91, 9201, 9202, 92, 93, 102, 103, 104, 105, 121, 122, 124, 131);
 		foreach ($items_na as $res) {
 			$this->pto[$res] = 'na';
+		}
+		
+		$isemag = false;
+		if(isset($_SESSION['choose']))
+		{
+			if($_SESSION['choose'] == 'emag')
+				$isemag = true;
+		}
+		
+		if($ismemag)
+		{
+			$this->pto[313] = 'na';
+			$this->pto['111e'] = 'na';
+			$this->pto['121e'] = 'na';
+			$this->pto['11101e'] = 'na'; 
+			$this->pto['11102e'] = 'na'; 
+			$this->pto['11103e'] = 'na'; 
+			$this->pto['12101e'] = 'na'; 
+			$this->pto['12102e'] = 'na'; 
+			$this->pto['12103e'] = 'na'; 
+			$this->pto['12104e'] = 'na'; 
+			$this->pto['12105e'] = 'na'; 
+			$this->pto['12106e'] = 'na'; 
 		}
 
 		$items_duda = array(21, 22, 3202, 32, 3401, 34, 36, 37, 41, 42, 94, 111, 113, 114, 123, 132, 133, 134, 135, 136, 137, 138, 139, 1310, 141, 142, 143);
@@ -101,12 +129,24 @@ class Parse {
 		$this->tot['hrefson']++;
 		$this->res_11_duda++;
 		$this->pto[1109] = 'duda';
+		
+		if($isemag)
+		{
+			$this->res_121_duda++;
+			$this->pto['12105e'] = 'duda';
+		}
 	} else if (preg_match("@\.(asf|asr|asx|avi|lsf|lsx|mov|movie|mp2|mpa|mpe|mpeg|mpg|mpv2|ppt|qt|swf)$@i", $outurl[2])) {
 		$this->tot['hrefapp']++;
 		$this->res_11_duda++;
 		$this->pto[1110] = 'duda';
 		$this->pto[1303] = 'duda';
 		$this->pto[1403] = 'duda';
+		
+		if($isemag)
+		{
+			$this->res_121_duda++;
+			$this->pto['12106e'] = 'duda';
+		}		
 	}
 	$this->pto[131] = 'duda';
 	break;
@@ -130,6 +170,12 @@ class Parse {
 	$this->pto[6304] = 'duda';
 	$this->pto[63] = 'duda';
 	$this->pto[8103] = 'duda';
+	
+	if($isemag)
+	{
+		$this->res_121_duda++;
+		$this->pto['12103e'] = 'duda';
+	}
 	break;
 
 	case 'area':
@@ -140,12 +186,24 @@ class Parse {
 		$this->tot['hrefson']++;
 		$this->res_11_duda++;
 		$this->pto[1109] = 'duda';
+		
+		if($isemag)
+		{
+			$this->res_121_duda++;
+			$this->pto['12105e'] = 'duda';
+		}
 	} else if (preg_match("@\.(asf|asr|asx|avi|lsf|lsx|mov|movie|mp2|mpa|mpe|mpeg|mpg|mpv2|ppt|qt|swf)$@i", $outar[2])) {
 		$this->tot['hrefapp']++;
 		$this->res_11_duda++;
 		$this->pto[1110] = 'duda';
 		$this->pto[1303] = 'duda';
 		$this->pto[1403] = 'duda';
+		
+		if($isemag)
+		{
+			$this->res_121_duda++;
+			$this->pto['12106e'] = 'duda';
+		}
 	}
 	break;
 
@@ -425,6 +483,20 @@ class Parse {
 	$this->pto[6303] = 'duda';
 	$this->pto[63] = 'duda';
 	$this->pto[8104] = 'duda';
+	
+	if($isemag)
+	{
+		if(stristr($tag,'image'))
+		{
+			$this->res_111_duda++;
+			$this->pto['11104e'] = 'duda';
+		}
+		else
+		{
+			$this->res_121_duda++;
+			$this->pto['12104e'] = 'duda';
+		}
+	}
 	break;
 
 	case 'ol':
@@ -452,6 +524,12 @@ class Parse {
 		$this->tot['script_body']++;
 		$this->res_11_duda++;
 		$this->pto[1104] = 'duda';
+
+		if($isemag)
+		{
+			$this->res_121_duda++;
+			$this->pto['12101e'] = 'duda';
+		}
 	}
 	$this->pto[6201] = 'duda';
 	$this->pto[6302] = 'duda';
@@ -645,9 +723,21 @@ class Parse {
 		if ($this->tot['img'] > $this->tot['alt_img']) {
 			$this->pto[1101] = 'mal';
 			$this->res_11_mal++;
+			
+			if ($isemag)
+			{
+				$this->pto['11101e'] = 'mal';
+				$this->res_111_mal++;
+			}
 		} else {
 			$this->pto[1101] = 'duda';
 			$this->res_11_duda++;
+
+			if ($isemag)
+			{
+				$this->pto['11101e'] = 'duda';
+				$this->res_111_duda++;
+			}
 		}
 	}
 
@@ -655,9 +745,21 @@ class Parse {
 		if ($this->tot['input_image'] > $this->tot['alt_input']) {
 			$this->pto[1102] = 'mal';
 			$this->res_11_mal++;
+			
+			if ($isemag)
+			{
+				$this->pto['11102e'] = 'mal';
+				$this->res_111_mal++;
+			}
 		} else {
 			$this->pto[1102] = 'duda';
 			$this->res_11_duda++;
+
+						if ($isemag)
+			{
+				$this->pto['11102e'] = 'duda';
+				$this->res_111_duda++;
+			}
 		}
 	}
 
@@ -665,9 +767,21 @@ class Parse {
 		if ($this->tot['area'] > $this->tot['alt_area']) {
 			$this->pto[1103] = 'mal';
 			$this->res_11_mal++;
+			
+			if ($isemag)
+			{
+				$this->pto['11103e'] = 'mal';
+				$this->res_111_mal++;
+			}
 		} else {
 			$this->pto[1103] = 'duda';
 			$this->res_11_duda++;
+			
+			if ($isemag)
+			{
+				$this->pto['11103e'] = 'duda';
+				$this->res_111_duda++;
+			}
 		}
 	}
 
@@ -678,9 +792,21 @@ class Parse {
 		if ($this->tot['embed'] > $this->tot['noembed']) {
 			$this->pto[1105] = 'mal';
 			$this->res_11_mal++;
+			
+			if ($isemag)
+			{
+				$this->pto['12102e'] = 'mal';
+				$this->res_121_mal++;
+			}
 		} else {
 			$this->pto[1105] = 'duda';
 			$this->res_11_duda++;
+			
+			if ($isemag)
+			{
+				$this->pto['12102e'] = 'duda';
+				$this->res_121_mal++;
+			}
 		}
 	}
 
@@ -731,6 +857,21 @@ class Parse {
 		$this->pto[11] = 'mal';
 	} else if ($this->res_11_duda > 0) {
 		$this->pto[11] = 'duda';
+	}
+	
+	if ($isemag)
+	{
+		if ($this->res_111_mal > 0) {
+			$this->pto['111e'] = 'mal';
+		} else if ($this->res_111_duda > 0) {
+			$this->pto['111e'] = 'duda';
+		}
+		
+		if ($this->res_121_mal > 0) {
+			$this->pto['121e'] = 'mal';
+		} else if ($this->res_11_duda > 0) {
+			$this->pto['121e'] = 'duda';
+		}
 	}
 
 	// 12 ismap en This_Page

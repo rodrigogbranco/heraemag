@@ -214,4 +214,28 @@ $info['p142_duda'] = 'Verifique se se complementa o texto com apresentações gráf
 $info['p143_duda'] = 'Verifique se o estilo de apresentação é consistente em todas as páginas.';
 /*eMag info's*/
 $info['p313_duda'] = 'Verifique o destino das ações dos elementos de formulários';
+$info['p11101e_mal'] = 'Há %d imagens sem textos alternativos.';
+$info['p11101e_mal2'] = 'Também há %d imagens que contêm o atributo "alt". Deve verificar se os textos alternativos resultam adequados.';
+$info['p11101e_duda'] = 'Verifique que os textos alternativos, nas %d imagens da página, resultam adequados.';
+$info['p11102e_mal'] = 'Há %d elementos &lt;input type="image"&gt; sem textos alternativos.';
+$info['p11102e_mal2'] = 'Também há %d botões que contêm o atributo "alt". Deve verificar se os textos alternativos resultam adequados.';
+$info['p11102e_duda'] = 'Verifique que os textos alternativos dos %d elementos &lt;input type="image"&gt; resultam adequados.';
+$info['p11103e_mal'] = 'Há %d elementos &lt;area&gt; sem textos alternativos.';
+$info['p11103e_mal2'] = 'Também há %d áreas que contêm o atributo "alt". Deve verificar se os textos alternativos resultam adequados.';
+$info['p11103e_duda'] = 'Verifique que os textos alternativos dos %d elementos &lt;area&gt; resultam adequados.';
+$info['p12101e_duda'] = 'Verifique se os %d elementos &lt;script&gt; encontrados no corpo do documento requerem a utilização dos elementos &lt;noscript&gt; para proporcionar conteúdos alternativos.';
+$info['p12102e_duda2'] = 'Verifique se os conteúdos alternativos proporcionados nos %d elementos &lt;noscript&gt; resultam adequados para os %d elementos &lt;script&gt; encontrados no corpo do documento.';
+$info['p12102e_na'] = 'Não há scripts no corpo do documento.';
+$info['p12102e_mala'] = 'Há %d elementos &lt;embed&gt; e';
+$info['p12102e_malb'] = 'não existe nenhum elemento &lt;noembed&gt; na página.';
+$info['p12102e_malc'] = 'existe apenas só 1 elemento &lt;noembed&gt; na página.';
+$info['p12102e_mald'] = 'existe só %d elementos &lt;noembed&gt; na página.';
+$info['p12102e_duda'] = 'Verifique que os conteúdos alternativos dos %d elementos &lt;noembed&gt; resultam adequados.';
+$info['p12103e_duda'] = 'Verifique que os conteúdos alternativos dos %d elementos &lt;applet&gt; resultam adequados. Há %d applets com o atributo opcional "alt".';
+$info['p11104e_duda'] = 'Verifique que os conteúdos alternativos dos %d elementos &lt;object tipo imagem&gt; resultam adequados.';
+$info['p12104e_duda'] = 'Verifique que os conteúdos alternativos dos %d elementos &lt;object com conteúdo multimídia&gt; resultam adequados.';
+$info['p12105e_duda'] = 'Verifique se se proporcionam conteúdos alternativos para os %d arquivos de som entrelaçados.';
+$info['p12105e_na'] = 'Não há arquivos de som entrelaçados.';
+$info['p12106e_duda'] = 'Verifique se se proporcionam conteúdos alternativos para os %d arquivos multimédia enlazados.';
+$info['p12106e_na'] = 'Não há arquivos multimédia entrelaçados.';
 ?>
