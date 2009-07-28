@@ -97,4 +97,14 @@ $elem['142'] = 'Complementos do texto';
 $elem['143'] = 'Apresentação';
 /*eMag elements*/
 $elem['313'] = 'Elementos de formulários';
+$elem['11101e'] = 'Imagens';
+$elem['11102e'] = 'Botões gráficos';
+$elem['11103e'] = 'Áreas de mapas de imagem';
+$elem['12101e'] = 'Scripts';
+$elem['12102e'] = 'Elementos embutidos';
+$elem['12103e'] = 'Applets';
+$elem['11104e'] = 'Objetos tipo Imagem';
+$elem['12104e'] = 'Objetos com conteúdo multimídia';
+$elem['12105e'] = 'Arquivos de som';
+$elem['12106e'] = 'Arquivos multimédia';
 ?>
