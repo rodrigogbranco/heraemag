@@ -139,10 +139,8 @@ $wcagToEmag['12103e'] = '12103e'; //1106 1.21
 $wcagToEmag['11104e'] = '11104e'; //11107 1.11
 $wcagToEmag['12104e'] = '12104e'; //1107 1.21
 
-$wcagToEmag[1108] = 0; //1108 none
 $wcagToEmag['12105e'] = '12105e'; //1109 1.21
 $wcagToEmag['12106e'] = '12106e'; //1110 1.21
-$wcagToEmag[1111] = 0; //1111 none
 
 $emag[10] = 'Fornece alternativas equivalentes para o conteúdo gráfico e sonoro.';
 $emag[20] = 'Assegure-se de que seu sítio seja legível e compreensível mesmo sem o uso de formatações.';
@@ -162,7 +160,7 @@ $emag[17] = 'Não usar concepções que possam provocar intermitência da tela, até 
 $emag[18] = 'Criar uma sequência lógica de tabulação para percorrer <span lang="en">links</span>, controles de formulários e objetos.';
 $emag[19] = 'Utilizar a linguagem mais clara e simples possível, logicamente, adequada ao conteúdo do sítio.';
 $emag[110] = 'Utilizar os mecanismos de navegação de maneira coerente, consistente e sistemática.';
-$emag[111] = 'Fornecer um equivalente textual a cada imagem (isso abrange: representações gráficas do texto, incluindo símbolos, GIFs animados, imagens utilizadas como sinalizadores de ponto de enumeração, espaçadores e botões gráficos), para tanto, utiliza-se o atributo <em>"alt"</em> ou <em>"longdesc"</em> em cada imagem.';
+$emag['111e'] = 'Fornecer um equivalente textual a cada imagem (isso abrange: representações gráficas do texto, incluindo símbolos, GIFs animados, imagens utilizadas como sinalizadores de ponto de enumeração, espaçadores e botões gráficos), para tanto, utiliza-se o atributo <em>"alt"</em> ou <em>"longdesc"</em> em cada imagem.';
 $emag[112] = 'Fornecer <span lang="en">links</span> de texto redundantes relativos a cada região ativa de um mapa de imagem armazenado tanto no cliente quanto no servidor. Não esquecendo de adicionar texto equivalente à imagem mostrada, no caso o <em>"alt"</em> ou <em>"longdesc"</em>.';
 $emag[113] = 'Fornecer resumos das tabelas utilizando o atributo <em>"summary"</em>, caso seja criada uma tabela para dados. Se a tabela foi criada para efeito de <span lang="en">design</span>, deixar o <em>"summary"</em> em branco.';
 $emag[114] = 'Em tabelas de dados com dois ou mais níveis lógicos de cabeçalhos, sejam de linha ou de coluna, utilizar marcações para associar as células de dados às células de cabeçalho. Organize tabelas complexas de forma que possam identificar facilmente suas divisões.';
@@ -172,7 +170,7 @@ $emag[117] = 'Dar a cada <span lang="en">frame</span> um título que facilite a i
 $emag[118] = 'Descrever a finalidade dos <span lang="en">frames</span> e o modo como se relacionam entre si, se isso não for óbvio a partir unicamente dos títulos, forneça uma descrição mais detalhada.';
 $emag[119] = 'Assegure a acessibilidade de objetos programados, tais como programas interpretáveis e <span lang="en">applets</span>, garantindo que a resposta a eventos seja independente do dispositivo de entrada e que qualquer elemento dotado de interface própria possa funcionar com qualquer leitor ou navegador que o usuário utilize. Evite colocar <span lang="en">scripts</span> que estejam vinculados a <span lang="en">links</span>, se isso não for possível, fornecer informações equivalentes em uma página alternativa acessível.';
 $emag[120] = 'Assegurar que todas as páginas possam ser utilizadas mesmo que os programas interpretáveis, os <span lang="en">applets</span> ou outros objetos programados tenham sido desativados ou não sejam suportados. Sempre que tiver <span lang="en">script</span> associe logo a seguir o elemento <em>"noscript"</em>.';
-$emag[121] = 'Fornecer equivalentes textuais para sons (reproduzidos ou não com interação do usuário), arquivos de áudio independentes, trilhas áudio de vídeo e trechos de vídeo.';
+$emag['121e'] = 'Fornecer equivalentes textuais para sons (reproduzidos ou não com interação do usuário), arquivos de áudio independentes, trilhas áudio de vídeo e trechos de vídeo.';
 $emag[122] = 'Em apresentações multimídia baseadas em tempo (filme ou animação), fornecer ou sincronizar alternativas textuais equivalentes (legendas ou descrições sonoras dos trechos visuais).';
 $emag[123] = 'Evitar páginas contendo movimento, até que os agentes dos usuário possibilitem o controle e a imobilização do conteúdo.';
 $emag[124] = 'Não sendo possível criar uma página acessível, crie uma página alternativa, juntamente  com uma justificativa apropriada, que utilize tecnologias em conformidade com este documento - acessível, que contenha informações (ou funcionalidade) equivalentes e seja atualizada tão frequentemente quanto a página original, considerada inacessível.';

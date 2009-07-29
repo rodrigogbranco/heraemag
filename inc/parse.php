@@ -51,7 +51,7 @@ class Parse {
 				$isemag = true;
 		}
 		
-		if($ismemag)
+		if($isemag == true)
 		{
 			$this->pto[313] = 'na';
 			$this->pto['111e'] = 'na';
@@ -130,7 +130,7 @@ class Parse {
 		$this->res_11_duda++;
 		$this->pto[1109] = 'duda';
 		
-		if($isemag)
+		if($isemag == true)
 		{
 			$this->res_121_duda++;
 			$this->pto['12105e'] = 'duda';
@@ -142,7 +142,7 @@ class Parse {
 		$this->pto[1303] = 'duda';
 		$this->pto[1403] = 'duda';
 		
-		if($isemag)
+		if($isemag == true)
 		{
 			$this->res_121_duda++;
 			$this->pto['12106e'] = 'duda';
@@ -171,7 +171,7 @@ class Parse {
 	$this->pto[63] = 'duda';
 	$this->pto[8103] = 'duda';
 	
-	if($isemag)
+	if($isemag == true)
 	{
 		$this->res_121_duda++;
 		$this->pto['12103e'] = 'duda';
@@ -187,7 +187,7 @@ class Parse {
 		$this->res_11_duda++;
 		$this->pto[1109] = 'duda';
 		
-		if($isemag)
+		if($isemag == true)
 		{
 			$this->res_121_duda++;
 			$this->pto['12105e'] = 'duda';
@@ -199,7 +199,7 @@ class Parse {
 		$this->pto[1303] = 'duda';
 		$this->pto[1403] = 'duda';
 		
-		if($isemag)
+		if($isemag == true)
 		{
 			$this->res_121_duda++;
 			$this->pto['12106e'] = 'duda';
@@ -484,7 +484,7 @@ class Parse {
 	$this->pto[63] = 'duda';
 	$this->pto[8104] = 'duda';
 	
-	if($isemag)
+	if($isemag == true)
 	{
 		if(stristr($tag,'image'))
 		{
@@ -525,7 +525,7 @@ class Parse {
 		$this->res_11_duda++;
 		$this->pto[1104] = 'duda';
 
-		if($isemag)
+		if($isemag == true)
 		{
 			$this->res_121_duda++;
 			$this->pto['12101e'] = 'duda';

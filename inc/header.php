@@ -126,12 +126,12 @@ function _Form($opt) {
 			}
 ?>
 <?php /*RGB begin*/ ?>
-<input type="radio" name="choose" value="wcag" checked="true"><strong>WCAG 1.0</strong>
-<input type="radio" name="choose" value="emag"><strong>eMag 2.0</strong>
+<input type="radio" name="choose" value="wcag"><strong>WCAG 1.0</strong>
+<input type="radio" name="choose" value="emag" checked="true"><strong>eMag 2.0</strong>
 <br>
 <?php /*RGB end*/ ?>
 <label for="url"><?php echo $lang['frm_url']; ?>
-<input type="text" name="url" id="url" value="http://" size="60" /></label> <input type="submit" name="btns" id="btns" value="<?php echo $lang['frm_boton']; ?>" /> 
+<input type="text" name="url" id="url" value="http://www.bb.com.br" size="60" /></label> <input type="submit" name="btns" id="btns" value="<?php echo $lang['frm_boton']; ?>" /> 
 <?php
 		} else {
 ?>
