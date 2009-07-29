@@ -97,4 +97,16 @@ $view['141'] = 'Um sítio Web pode ser visitado e pode contar entre os "seus clie
 $view['142'] = 'Para rever este ponto, há que valorar se na página se faz um uso apropriado de icones e de sons que acompanham as acções, a ilustração dos conteúdos com imagens, vídeos, animações e/ou sons.';
 $view['143'] = 'Para rever e valorar a aplicação deste ponto há que comparar a página que se está a rever com outras do mesmo sítio, para ver se se mantém um estilo consistente.';
 $view['p_131'] = 'HERA mostra os <span lang="en" xml:lang="en">links</span> da página. Identifica o texto dos <span lang="en" xml:lang="en">links</span> e o atributo "title" de &lt;a&gt;, caso o mesmo exista. Quando um <span lang="en" xml:lang="en">link</span> contém um outro elemento (uma imagem, por exemplo), identifica-se o elemento apenas se tiver "alt" ou "title".<br /> Destacam-se os <span lang="en" xml:lang="en">links</span> com o mesmo conteúdo. Verifique se se utilizam para identificar a um mesmo recurso.';
+/*eMag points*/
+$view['11101e'] = 'HERA identifica e destaca as imagens com e sem o atributo "alt", e mostra o código de &lt;img&gt; (quando o texto aparece sublinhado significa  que a imagem corresponde a um <span lang="en">link</span>). Verifique os textos alternativos das imagens.';
+$view['11102e'] = 'HERA identifica e destaca os botões gráficos com e sem o atributo "alt", e mostra o código de &lt;input&gt;. Verifique os textos alternativos dos botões gráficos.';
+$view['11103e'] = 'HERA identifica e destaca as áreas de mapas de imagem com e sem o atributo "alt" e mostra o código de &lt;area&gt;. Também identifica
+os elementos que utilizam os mapas de imagem. Verifique os textos alternativos das áreas.';
+$view['12101e'] = 'HERA identifica e destaca os scripts e mostra o código de &lt;script&gt;. Também identifica os elementos &lt;noscript&gt; e mostra o seu conteúdo. Verifique os conteúdos alternativos dos scripts.';
+$view['12102e'] = 'HERA identifica e destaca os elementos &lt;embed&gt; e mostra o seu código. Também identifica os elementos &lt;noembed&gt; e mostra o seu conteúdo. Verifique os conteúdos alternativos de &lt;embed&gt;.';
+$view['12103e'] = 'HERA identifica e destaca os elementos &lt;applet&gt; e mostra o seu código. Verifique os conteúdos alternativos de &lt;applet&gt;.';
+$view['11104e'] = 'HERA identifica e destaca os elementos &lt;object&gt; e mostra o seu código. Verifique os conteúdos alternativos de &lt;object&gt; tipo imagem.';
+$view['12104e'] = 'HERA identifica e destaca os elementos &lt;object&gt; e mostra o seu código. Verifique os conteúdos alternativos de &lt;object&gt; com conteúdo multimídia.';
+$view['12105e'] = 'HERA identifica e destaca os <span lang="en">links</span> e as áreas de mapas de imagem cuja referência é um arquivo externo identificado como um arquivo de som. Verifique os conteúdos alternativos desses sons.';
+$view['12106e'] = 'HERA identifica e destaca os <span lang="en">links</span> e áreas de mapas de imagem cuja referência é um arquivo externo identificado como un arquivo multimédia. Verifique os conteúdos alternativos desses arquivos multimédia.';
 ?>

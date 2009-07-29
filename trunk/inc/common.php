@@ -1134,6 +1134,108 @@ function Info($pto, $res) {
 				$txt = $nada;
 			}
 		break;
+		
+		case '11101e':
+			if ($res=='mal') {
+				$resta = $totales['img'] - $totales['alt_img'];
+				$txt = sprintf($info['p11101e_mal'], $resta);
+				if ($totales['alt_img']) {
+					$txt .= ' '.sprintf($info['p11101e_mal2'], $totales['alt_img']);
+				}
+			} else if ($res=='duda') {
+				$txt = sprintf($info['p11101e_duda'], $totales['alt_img']);
+			} else if ($res=='na') {
+				$txt = $nada;
+			}
+		break;
+		case '11102e':
+			if ($res=='mal') {
+				$resta2 = $totales['input_image'] - $totales['alt_input'];
+				$txt = sprintf($info['p11102e_mal'], $resta2);
+				if ($totales['alt_input']) {
+					$txt .= ' '.sprintf($info['p11102e_mal2'], $totales['alt_input']);
+				}
+			} else if ($res=='duda') {
+				$txt = sprintf($info['p11102e_duda'], $totales['alt_input']);
+			} else if ($res=='na') {
+				$txt = $nada;
+			}
+		break;
+		case '11103e':
+			if ($res=='mal') {
+				$resta3 = $totales['area'] - $totales['alt_area'];
+				$txt = sprintf($info['p11103e_mal'], $resta3);
+				if ($totales['alt_area']) {
+					$txt .= ' '.sprintf($info['p11103e_mal2'], $totales['alt_area']);
+				}
+			} else if ($res=='duda') {
+				$txt = sprintf($info['p11103e_duda'], $totales['alt_area']);
+			} else if ($res=='na') {
+				$txt = $nada;
+			}
+		break;
+		case '12101e':
+			if ($res=='duda') {
+				if ($totales['noscript'] == 0) {
+					$txt = sprintf($info['p12101e_duda'], $totales['script_body']);
+				} else {
+					$txt = sprintf($info['p12101e_duda2'], $totales['noscript'], $totales['script_body']);
+				}
+			} else if ($res=='na') {
+				$txt = $info['p12101e_na'];
+			}
+		break;
+		case '12102e':
+			if ($res=='mal') {
+				if ($totales['noembed'] == 0) {
+					$cant5 = $info['p12102e_malb'];
+				} else if ($totales['noembed'] == 1) {
+					$cant5 = $info['p12102e_malc'];
+				} else {
+					$cant5 = sprintf($info['p12102e_mald'], $totales['noembed']);
+				}
+				$txt = sprintf($info['p12102e_mala'], $totales['embed']).' '.$cant5;
+			} else if ($res=='duda') {
+				$txt = sprintf($info['p12102e_duda'], $totales['embed']);
+			} else if ($res=='na') {
+				$txt = $nada;
+			}
+		break;
+		case '12103e':
+			if ($res=='duda') {
+				$txt = sprintf($info['p12103e_duda'], $totales['applet'], $totales['alt_applet']);
+			} else if ($res=='na') {
+				$txt = $nada;
+			}
+		break;
+		case '11104e':
+			if ($res=='duda') {
+				$txt = sprintf($info['p11104e_duda'], $totales['object']);
+			} else if ($res=='na') {
+				$txt = $nada;
+			}
+		break;
+		case '12104e':
+			if ($res=='duda') {
+				$txt = sprintf($info['p12104e_duda'], $totales['object']);
+			} else if ($res=='na') {
+				$txt = $nada;
+			}
+		break;
+		case '12105e':
+			if ($res=='duda') {
+				$txt = sprintf($info['p12105e_duda'], $totales['hrefson']);
+			} else if ($res=='na') {
+				$txt = $info['p12105e_na'];
+			}
+		break;
+		case '12106e':
+			if ($res=='duda') {
+				$txt = sprintf($info['p12106e_duda'], $totales['hrefapp']);
+			} else if ($res=='na') {
+				$txt = $info['p12106e_na'];
+			}
+		break;
 	} // End switch
 
 	return $txt;
