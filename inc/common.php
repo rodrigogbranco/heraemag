@@ -213,8 +213,21 @@ function Absolute_URL($base, $url) {
 
 
 function Info($pto, $res) {
+		
+		if(isset($_SESSION['choose']))
+		{
+			if($_SESSION['choose'] == 'emag')
+			{
+				if($pto == 111)
+					$pto = '111e';
+				if($pto == 121)
+					$pto = '121e';
+			}
+		}
 	global $elem, $totales, $info, $lang;
 
+	echo "<br>".$pto." ".$res;
+	
 	$total_prog = array (
 			'script' => $totales['script'],
 			'applet' => $totales['applet'],
@@ -1297,7 +1310,9 @@ function changeVariables()
 						/*verificando se existe um mapeamento valido*/
 						if($wcagToEmag[$bak] != 0)
 						{
-							$wcag[$bak] = $emag[$wcagToEmag[$bak]];
+							if (isset($emag[$wcagToEmag[$bak]]))
+								$wcag[$bak] = $emag[$wcagToEmag[$bak]];
+								
 							$mis_puntos[$bak] = $conteudo;
 						}
 					}

@@ -1297,14 +1297,12 @@ class checkpoint {
 		{
 			if($_SESSION['choose'] == 'emag')
 			{
-				echo "aki";
 				if($punto == 111)
 					$punto = '111e';
 				if($punto == 121)
 					$punto = '121e';
 			}
 		}
-		echo "aki";
 		global $help, $param, $lang;
 
 		if (PR > 0) {
