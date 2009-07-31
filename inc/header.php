@@ -131,7 +131,7 @@ function _Form($opt) {
 <br>
 <?php /*RGB end*/ ?>
 <label for="url"><?php echo $lang['frm_url']; ?>
-<input type="text" name="url" id="url" value="http://www.bb.com.br" size="60" /></label> <input type="submit" name="btns" id="btns" value="<?php echo $lang['frm_boton']; ?>" /> 
+<input type="text" name="url" id="url" value="http://www.tjms.jus.br" size="60" /></label> <input type="submit" name="btns" id="btns" value="<?php echo $lang['frm_boton']; ?>" /> 
 <?php
 		} else {
 ?>
