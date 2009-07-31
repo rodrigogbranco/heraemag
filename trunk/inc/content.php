@@ -192,8 +192,8 @@ class checkpoint {
 	}
 
 	function Este_Punto($x,$y,$z=0) {
+	
 	global $puntos, $mis_puntos, $wcag, $totales, $manual, $help, $comentarios, $elem, $lang;
-
 	if (AN == 1) {
 		$z = 0;
 	}
@@ -237,7 +237,6 @@ class checkpoint {
 			}
 			echo "</ul>\n</dd>\n\n";
 		}
-
 	if ($this->dif == 1) {
 		$this->Punto($mis_puntos[$x],Info(1,'chked'),$comentarios[$x],$x);
 	} else if ($comentarios[$x] != '') {
@@ -245,6 +244,98 @@ class checkpoint {
 	}
 
 	switch ($x) {
+	
+	case '111e':
+		if (($puntos['11101e']=='mal')&&(($z==0)||($z==3))) {
+			$this->Punto('mal',$elem['11101e'],Info('11101e','mal'),'11101e');
+		} else if (($puntos['11101e']=='duda')&&(($z==0)||($z==2))) {
+			$this->Punto('duda',$elem['11101e'],Info('11101e','duda'),'11101e');
+		} else if (($puntos['11101e']=='na')&&(($z==0)||($z==4))) {
+			$this->Punto('na',$elem['11101e'],Info('11101e','na'),'11101e');
+		} else if ($this->dif == 1) {
+			$this->Punto($mis_puntos['111e'],$elem['11101e'],Info(1,'chk'),'11101e');
+		}
+
+		if (($puntos['11102e']=='mal')&&(($z==0)||($z==3))) {
+			$this->Punto('mal',$elem['11102e'],Info('11102e','mal'),'11102e');
+		} else if (($puntos['11102e']=='duda')&&(($z==0)||($z==2))) {
+			$this->Punto('duda',$elem['11102e'],Info('11102e','duda'),'11102e');
+		} else if (($puntos['11102e']=='na')&&(($z==0)||($z==4))) {
+			$this->Punto('na',$elem['11102e'],Info('11102e','na'),'11102e');
+		} else if ($this->dif == 1) {
+			$this->Punto($mis_puntos['111e'],$elem['11102e'],Info(1,'chk'),'11102e');
+		}
+
+		if (($puntos['11103e']=='mal')&&(($z==0)||($z==3))) {
+			$this->Punto('mal',$elem['11103e'],Info('11103e','mal'),'11103e');
+		} else if (($puntos['11103e']=='duda')&&(($z==0)||($z==2))) {
+			$this->Punto('duda',$elem['11103e'],Info('11103e','duda'),'11103e');
+		} else if (($puntos['11103e']=='na')&&(($z==0)||($z==4))) {
+			$this->Punto('na',$elem['11103e'],Info('11103e','na'),'11103e');
+		} else if ($this->dif == 1) {
+			$this->Punto($mis_puntos['111e'],$elem['11103e'],Info(1,'chk'),'11103e');
+		}
+
+		if (($puntos['11104e']=='duda')&&(($z==0)||($z==2))) {
+			$this->Punto('duda',$elem['11104e'],Info('11104e','duda'),'11104e');
+		} else if (($puntos['11104e']=='na')&&(($z==0)||($z==4))) {
+			$this->Punto('na',$elem['11104e'],Info('11104e','na'),'11104e');
+		} else if ($this->dif == 1) {
+			$this->Punto($mis_puntos['111e'],$elem['11104e'],Info(1,'chk'),'11104e');
+		}
+	break;
+	
+	case '121e':
+		if (($puntos['12101e']=='duda')&&(($z==0)||($z==2))) {
+			$this->Punto('duda',$elem['12101e'],Info('12101e','duda'),'12101e');
+		} else if (($puntos['12101e']=='na')&&(($z==0)||($z==4))) {
+			$this->Punto('na',$elem['12101e'],Info('12101e','na'),'12101e');
+		} else if ($this->dif == 1) {
+			$this->Punto($mis_puntos['121e'],$elem['12101e'],Info(1,'chk'),'12101e');
+		}
+
+		if (($puntos['12102e']=='mal')&&(($z==0)||($z==3))) {
+			$this->Punto('mal',$elem['12102e'],Info('12102e','mal'),'12102e');
+		} else if (($puntos['12102e']=='duda')&&(($z==0)||($z==2))) {
+			$this->Punto('duda',$elem['12102e'],Info('12102e','duda'),'12102e');
+		} else if (($puntos['12102e']=='na')&&(($z==0)||($z==4))) {
+			$this->Punto('na',$elem['12102e'],Info('12102e','na'),'12102e');
+		} else if ($this->dif == 1) {
+			$this->Punto($mis_puntos['121e'],$elem['12102e'],Info(1,'chk'),'12102e');
+		}
+
+		if (($puntos['12103e']=='duda')&&(($z==0)||($z==2))) {
+			$this->Punto('duda',$elem['12103e'],Info('12103e','duda'),'12103e');
+		} else if (($puntos['12103e']=='na')&&(($z==0)||($z==4))) {
+			$this->Punto('na',$elem['12103e'],Info('12103e','na'),'12103e');
+		} else if ($this->dif == 1) {
+			$this->Punto($mis_puntos['121e'],$elem['12103e'],Info(1,'chk'),'12103e');
+		}
+
+		if (($puntos['12104e']=='duda')&&(($z==0)||($z==2))) {
+			$this->Punto('duda',$elem['12104e'],Info('12104e','duda'),'12104e');
+		} else if (($puntos['12104e']=='na')&&(($z==0)||($z==4))) {
+			$this->Punto('na',$elem['12104e'],Info('12104e','na'),'12104e');
+		} else if ($this->dif == 1) {
+			$this->Punto($mis_puntos['121e'],$elem['12104e'],Info(1,'chk'),'12104e');
+		}	
+
+		if (($puntos['12105e']=='duda')&&(($z==0)||($z==2))) {
+			$this->Punto('duda',$elem['12105e'],Info('12105e','duda'),'12105e');
+		} else if (($puntos['12105e']=='na')&&(($z==0)||($z==4))) {
+			$this->Punto('na',$elem['12105e'],Info('12105e','na'),'12105e');
+		} else if ($this->dif == 1) {
+			$this->Punto($mis_puntos['121e'],$elem['12105e'],Info(1,'chk'),'12105e');
+		}
+
+		if (($puntos['12106e']=='duda')&&(($z==0)||($z==2))) {
+			$this->Punto('duda',$elem['12106e'],Info('12106e','duda'),'12106e');
+		} else if (($puntos['12106e']=='na')&&(($z==0)||($z==4))) {
+			$this->Punto('na',$elem['12106e'],Info('12106e','na'),'12106e');
+		} else if ($this->dif == 1) {
+			$this->Punto($mis_puntos['121e'],$elem['12106e'],Info(1,'chk'),'12106e');
+		}
+	break;
 
 	case 11:
 		if (($puntos[1101]=='mal')&&(($z==0)||($z==3))) {
@@ -1174,99 +1265,6 @@ class checkpoint {
 			$this->Punto($mis_puntos[313],$elem[313],Info(1,'chk'),313);
 		}
 	break;
-	
-	case '111e':
-		if (($puntos['11101e']=='mal')&&(($z==0)||($z==3))) {
-			$this->Punto('mal',$elem['11101e'],Info('11101e','mal'),'11101e');
-		} else if (($puntos['11101e']=='duda')&&(($z==0)||($z==2))) {
-			$this->Punto('duda',$elem['11101e'],Info('11101e','duda'),'11101e');
-		} else if (($puntos['11101e']=='na')&&(($z==0)||($z==4))) {
-			$this->Punto('na',$elem['11101e'],Info('11101e','na'),'11101e');
-		} else if ($this->dif == 1) {
-			$this->Punto($mis_puntos['111e'],$elem['11101e'],Info(1,'chk'),'11101e');
-		}
-
-		if (($puntos['11102e']=='mal')&&(($z==0)||($z==3))) {
-			$this->Punto('mal',$elem['11102e'],Info('11102e','mal'),'11102e');
-		} else if (($puntos['11102e']=='duda')&&(($z==0)||($z==2))) {
-			$this->Punto('duda',$elem['11102e'],Info('11102e','duda'),'11102e');
-		} else if (($puntos['11102e']=='na')&&(($z==0)||($z==4))) {
-			$this->Punto('na',$elem['11102e'],Info('11102e','na'),'11102e');
-		} else if ($this->dif == 1) {
-			$this->Punto($mis_puntos['111e'],$elem['11102e'],Info(1,'chk'),'11102e');
-		}
-
-		if (($puntos['11103e']=='mal')&&(($z==0)||($z==3))) {
-			$this->Punto('mal',$elem['11103e'],Info('11103e','mal'),'11103e');
-		} else if (($puntos['11103e']=='duda')&&(($z==0)||($z==2))) {
-			$this->Punto('duda',$elem['11103e'],Info('11103e','duda'),'11103e');
-		} else if (($puntos['11103e']=='na')&&(($z==0)||($z==4))) {
-			$this->Punto('na',$elem['11103e'],Info('11103e','na'),'11103e');
-		} else if ($this->dif == 1) {
-			$this->Punto($mis_puntos['111e'],$elem['11103e'],Info(1,'chk'),'11103e');
-		}
-
-		if (($puntos['11104e']=='duda')&&(($z==0)||($z==2))) {
-			$this->Punto('duda',$elem['11104e'],Info('11104e','duda'),'11104e');
-		} else if (($puntos['11104e']=='na')&&(($z==0)||($z==4))) {
-			$this->Punto('na',$elem['11104e'],Info('11104e','na'),'11104e');
-		} else if ($this->dif == 1) {
-			$this->Punto($mis_puntos['111e'],$elem['11104e'],Info(1,'chk'),'11104e');
-		}
-	break;
-	
-	case '121e':
-		if (($puntos['12101e']=='duda')&&(($z==0)||($z==2))) {
-			$this->Punto('duda',$elem['12101e'],Info('12101e','duda'),'12101e');
-		} else if (($puntos['12101e']=='na')&&(($z==0)||($z==4))) {
-			$this->Punto('na',$elem['12101e'],Info('12101e','na'),'12101e');
-		} else if ($this->dif == 1) {
-			$this->Punto($mis_puntos['121e'],$elem['12101e'],Info(1,'chk'),'12101e');
-		}
-
-		if (($puntos['12102e']=='mal')&&(($z==0)||($z==3))) {
-			$this->Punto('mal',$elem['12102e'],Info('12102e','mal'),'12102e');
-		} else if (($puntos['12102e']=='duda')&&(($z==0)||($z==2))) {
-			$this->Punto('duda',$elem['12102e'],Info('12102e','duda'),'12102e');
-		} else if (($puntos['12102e']=='na')&&(($z==0)||($z==4))) {
-			$this->Punto('na',$elem['12102e'],Info('12105e','na'),'12102e');
-		} else if ($this->dif == 1) {
-			$this->Punto($mis_puntos['121e'],$elem['12102e'],Info(1,'chk'),'12102e');
-		}
-
-		if (($puntos['12103e']=='duda')&&(($z==0)||($z==2))) {
-			$this->Punto('duda',$elem['12103e'],Info('12103e','duda'),'12103e');
-		} else if (($puntos['12103e']=='na')&&(($z==0)||($z==4))) {
-			$this->Punto('na',$elem['12103e'],Info('12103e','na'),'12103e');
-		} else if ($this->dif == 1) {
-			$this->Punto($mis_puntos['121e'],$elem['12103e'],Info(1,'chk'),'12103e');
-		}
-
-		if (($puntos['12104e']=='duda')&&(($z==0)||($z==2))) {
-			$this->Punto('duda',$elem['12104e'],Info('12104e','duda'),'12104e');
-		} else if (($puntos['12104e']=='na')&&(($z==0)||($z==4))) {
-			$this->Punto('na',$elem['12104e'],Info('12104e','na'),'12104e');
-		} else if ($this->dif == 1) {
-			$this->Punto($mis_puntos['121e'],$elem['12104e'],Info(1,'chk'),'12104e');
-		}	
-
-		if (($puntos['12105e']=='duda')&&(($z==0)||($z==2))) {
-			$this->Punto('duda',$elem['12105e'],Info('12105e','duda'),'12105e');
-		} else if (($puntos['12105e']=='na')&&(($z==0)||($z==4))) {
-			$this->Punto('na',$elem['12105e'],Info('12105e','na'),'12105e');
-		} else if ($this->dif == 1) {
-			$this->Punto($mis_puntos['121e'],$elem['12105e'],Info(1,'chk'),'12105e');
-		}
-
-		if (($puntos['12106e']=='duda')&&(($z==0)||($z==2))) {
-			$this->Punto('duda',$elem['12106e'],Info('12106e','duda'),'12106e');
-		} else if (($puntos['12106e']=='na')&&(($z==0)||($z==4))) {
-			$this->Punto('na',$elem['12106e'],Info('12106e','na'),'12106e');
-		} else if ($this->dif == 1) {
-			$this->Punto($mis_puntos['121e'],$elem['12106e'],Info(1,'chk'),'12106e');
-		}
-	break;
-	/*RGB end*/
 } // Fin switch
 
 		// Formulario
@@ -1293,16 +1291,6 @@ class checkpoint {
 
 
 	function Punto ($resultado, $elemento, $texto, $punto, $ver=true, $w3c='') {
-		if(isset($_SESSION['choose']))
-		{
-			if($_SESSION['choose'] == 'emag')
-			{
-				if($punto == 111)
-					$punto = '111e';
-				if($punto == 121)
-					$punto = '121e';
-			}
-		}
 		global $help, $param, $lang;
 
 		if (PR > 0) {

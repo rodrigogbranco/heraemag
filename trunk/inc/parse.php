@@ -61,7 +61,8 @@ class Parse {
 			$this->pto['11103e'] = 'na'; 
 			$this->pto['12101e'] = 'na'; 
 			$this->pto['12102e'] = 'na'; 
-			$this->pto['12103e'] = 'na'; 
+			$this->pto['12103e'] = 'na';
+			$this->pto['11104e'] = 'na';
 			$this->pto['12104e'] = 'na'; 
 			$this->pto['12105e'] = 'na'; 
 			$this->pto['12106e'] = 'na'; 
@@ -805,7 +806,7 @@ class Parse {
 			if ($isemag)
 			{
 				$this->pto['12102e'] = 'duda';
-				$this->res_121_mal++;
+				$this->res_121_duda++;
 			}
 		}
 	}
