@@ -201,46 +201,54 @@ class checkpoint {
 	if ($mis_puntos[$x] != $puntos[$x]) {
 		$this->dif = 1;
 	}
+	
+	$skip = false;
+	if(($_SESSION['emag'] ==  true) && ($x == 53 || $x == 56 || $x == 92 || $x == 72))
+		$skip = true;
+		
+	//duplicateds itens, do not check
+	if($skip == false)
+	{
+		$this->Icon_Res($mis_puntos[$x],$y,$puntos[$x]);
+		echo '<dd class="dd_wcag"><blockquote title="';
+		echo sprintf($lang['dd_tit_blq'], $y);
+		echo '">'.$wcag[$x]."</blockquote></dd>\n\n";
 
-	$this->Icon_Res($mis_puntos[$x],$y,$puntos[$x]);
-	echo '<dd class="dd_wcag"><blockquote title="';
-	echo sprintf($lang['dd_tit_blq'], $y);
-	echo '">'.$wcag[$x]."</blockquote></dd>\n\n";
-
-		// Manual
-		if (HL == 1) {
-			$items[11] = array (1101, 1102, 1103, 1104, 1105, 1106, 1107, 1108, 1109, 1110, 1111);
-			$items[13] = array (1301, 1302, 1303);
-			$items[14] = array (1401, 1402, 1403);
-			$items[32] = array (3201,3202);
-			$items[33] = array (3301, 3302, 3303);
-			$items[34] = array (3401, 3402);
-			$items[62] = array (6201, 6202);
-			$items[63] = array (6301, 6302, 6303, 6304);
-			$items[65] = array (6501, 6502);
-			$items[74] = array (7401, 7402);
-			$items[75] = array (7501, 7502);
-			$items[81] = array (8101, 8102, 8103, 8104);
-			$items[92] = array (9201, 9202);
-			$items[101] = array (10101, 10102);
-			$items[112] = array (11201, 11202);
-			echo '<dd class="man"><p><img src="img/helpsia.gif" alt="'.$lang['ico_alt_man'].'" class="ninihlp" /> <strong>';
-			echo sprintf($lang['dd_txt_hlp'], $y);
-			echo '</strong></p>'."\n".$manual[$x];
-			echo "<ul>\n";
-			if (is_array($items[$x])) {
-				foreach ($items[$x] as $item) {
-					echo "<li>".$help[$item]."</li>\n";
+			// Manual
+			if (HL == 1) {
+				$items[11] = array (1101, 1102, 1103, 1104, 1105, 1106, 1107, 1108, 1109, 1110, 1111);
+				$items[13] = array (1301, 1302, 1303);
+				$items[14] = array (1401, 1402, 1403);
+				$items[32] = array (3201,3202);
+				$items[33] = array (3301, 3302, 3303);
+				$items[34] = array (3401, 3402);
+				$items[62] = array (6201, 6202);
+				$items[63] = array (6301, 6302, 6303, 6304);
+				$items[65] = array (6501, 6502);
+				$items[74] = array (7401, 7402);
+				$items[75] = array (7501, 7502);
+				$items[81] = array (8101, 8102, 8103, 8104);
+				$items[92] = array (9201, 9202);
+				$items[101] = array (10101, 10102);
+				$items[112] = array (11201, 11202);
+				echo '<dd class="man"><p><img src="img/helpsia.gif" alt="'.$lang['ico_alt_man'].'" class="ninihlp" /> <strong>';
+				echo sprintf($lang['dd_txt_hlp'], $y);
+				echo '</strong></p>'."\n".$manual[$x];
+				echo "<ul>\n";
+				if (is_array($items[$x])) {
+					foreach ($items[$x] as $item) {
+						echo "<li>".$help[$item]."</li>\n";
+					}
+				} else {
+					echo "<li>".$help[$x]."</li>\n";
 				}
-			} else {
-				echo "<li>".$help[$x]."</li>\n";
+				echo "</ul>\n</dd>\n\n";
 			}
-			echo "</ul>\n</dd>\n\n";
+		if ($this->dif == 1) {
+			$this->Punto($mis_puntos[$x],Info(1,'chked'),$comentarios[$x],$x);
+		} else if ($comentarios[$x] != '') {
+			$this->Punto($puntos[$x],'Comentario',$comentarios[$x],1000);
 		}
-	if ($this->dif == 1) {
-		$this->Punto($mis_puntos[$x],Info(1,'chked'),$comentarios[$x],$x);
-	} else if ($comentarios[$x] != '') {
-		$this->Punto($puntos[$x],'Comentario',$comentarios[$x],1000);
 	}
 
 	switch ($x) {
@@ -587,6 +595,17 @@ class checkpoint {
 		} else if ($this->dif == 1) {
 			$this->Punto($mis_puntos[33],$elem[3303],Info(1,'chk'),3303);
 		}
+		
+		if($_SESSION['emag'] == true)
+		{
+			if (($puntos[53]=='duda')&&(($z==0)||($z==2))) {
+				$this->Punto('duda',$elem[53],Info(53,'duda'),53,false);
+			} else if (($puntos[53]=='bien')&&(($z==0)||($z==1))) {
+				$this->Punto('bien',$elem[53],Info(53,'bien'),53);
+			} else if ($this->dif == 1) {
+				$this->Punto($mis_puntos[53],$elem[53],Info(1,'chk'),53);
+			}
+		}
 	break;
 
 	case 34:
@@ -651,6 +670,17 @@ class checkpoint {
 		} else if ($this->dif == 1) {
 			$this->Punto($mis_puntos[42],$elem[42],Info(1,'chk'),42);
 		}
+		
+		if($_SESSION['emag'] == true)
+		{
+			if (($puntos[56]=='duda')&&(($z==0)||($z==2))) {
+				$this->Punto('duda',$elem[56],Info(56,'duda'),56);
+			} else if (($puntos[56]=='na')&&(($z==0)||($z==4))) {
+				$this->Punto('na',$elem[56],Info(56,'na'),56);
+			} else if ($this->dif == 1) {
+				$this->Punto($mis_puntos[56],$elem[56],Info(1,'chk'),56);
+			}
+		}
 	break;
 
 	case 43:
@@ -684,12 +714,15 @@ class checkpoint {
 	break;
 
 	case 53:
-		if (($puntos[53]=='duda')&&(($z==0)||($z==2))) {
-			$this->Punto('duda',$elem[53],Info(53,'duda'),53,false);
-		} else if (($puntos[53]=='bien')&&(($z==0)||($z==1))) {
-			$this->Punto('bien',$elem[53],Info(53,'bien'),53);
-		} else if ($this->dif == 1) {
-			$this->Punto($mis_puntos[53],$elem[53],Info(1,'chk'),53);
+		if($_SESSION['emag'] == false)
+		{
+			if (($puntos[53]=='duda')&&(($z==0)||($z==2))) {
+				$this->Punto('duda',$elem[53],Info(53,'duda'),53,false);
+			} else if (($puntos[53]=='bien')&&(($z==0)||($z==1))) {
+				$this->Punto('bien',$elem[53],Info(53,'bien'),53);
+			} else if ($this->dif == 1) {
+				$this->Punto($mis_puntos[53],$elem[53],Info(1,'chk'),53);
+			}
 		}
 	break;
 
@@ -718,12 +751,15 @@ class checkpoint {
 	break;
 
 	case 56:
-		if (($puntos[56]=='duda')&&(($z==0)||($z==2))) {
-			$this->Punto('duda',$elem[56],Info(56,'duda'),56);
-		} else if (($puntos[56]=='na')&&(($z==0)||($z==4))) {
-			$this->Punto('na',$elem[56],Info(56,'na'),56);
-		} else if ($this->dif == 1) {
-			$this->Punto($mis_puntos[56],$elem[56],Info(1,'chk'),56);
+		if($_SESSION['emag'] == false)
+		{
+			if (($puntos[56]=='duda')&&(($z==0)||($z==2))) {
+				$this->Punto('duda',$elem[56],Info(56,'duda'),56);
+			} else if (($puntos[56]=='na')&&(($z==0)||($z==4))) {
+				$this->Punto('na',$elem[56],Info(56,'na'),56);
+			} else if ($this->dif == 1) {
+				$this->Punto($mis_puntos[56],$elem[56],Info(1,'chk'),56);
+			}
 		}
 	break;
 
@@ -835,17 +871,33 @@ class checkpoint {
 		} else if ($this->dif == 1) {
 			$this->Punto($mis_puntos[71],$elem[71],Info(1,'chk'),71);
 		}
+	
+		if($_SESSION['emag'] == true)
+		{
+			if (($puntos[72]=='duda')&&(($z==0)||($z==2))) {
+				$this->Punto('duda',$elem[72],Info(72,'duda'),72);
+			} else if (($puntos[72]=='mal')&&(($z==0)||($z==3))) {
+				$this->Punto('mal',$elem[72],Info(72,'mal'),72);
+			} else if (($puntos[72]=='bien')&&(($z==0)||($z==1))) {
+				$this->Punto('bien',$elem[72],Info(72,'bien'),72);
+			} else if ($this->dif == 1) {
+				$this->Punto($mis_puntos[72],$elem[72],Info(1,'chk'),72);
+			}
+		}
 	break;
 
 	case 72:
-		if (($puntos[72]=='duda')&&(($z==0)||($z==2))) {
-			$this->Punto('duda',$elem[72],Info(72,'duda'),72);
-		} else if (($puntos[72]=='mal')&&(($z==0)||($z==3))) {
-			$this->Punto('mal',$elem[72],Info(72,'mal'),72);
-		} else if (($puntos[72]=='bien')&&(($z==0)||($z==1))) {
-			$this->Punto('bien',$elem[72],Info(72,'bien'),72);
-		} else if ($this->dif == 1) {
-			$this->Punto($mis_puntos[72],$elem[72],Info(1,'chk'),72);
+		if($_SESSION['emag'] == false)
+		{
+			if (($puntos[72]=='duda')&&(($z==0)||($z==2))) {
+				$this->Punto('duda',$elem[72],Info(72,'duda'),72);
+			} else if (($puntos[72]=='mal')&&(($z==0)||($z==3))) {
+				$this->Punto('mal',$elem[72],Info(72,'mal'),72);
+			} else if (($puntos[72]=='bien')&&(($z==0)||($z==1))) {
+				$this->Punto('bien',$elem[72],Info(72,'bien'),72);
+			} else if ($this->dif == 1) {
+				$this->Punto($mis_puntos[72],$elem[72],Info(1,'chk'),72);
+			}
 		}
 	break;
 
@@ -933,6 +985,25 @@ class checkpoint {
 		} else if ($this->dif == 1) {
 			$this->Punto($mis_puntos[81],$elem[8104],Info(1,'chk'),8104);
 		}
+		
+		if($_SESSION['emag'] == true)
+		{
+			if (($puntos[9201]=='duda')&&(($z==0)||($z==2))) {
+				$this->Punto('duda',$elem[9201],Info(9201,'duda'),9201);
+			} else if (($puntos[9201]=='na')&&(($z==0)||($z==4))) {
+				$this->Punto('na',$elem[9201],Info(9201,'na'),9201);
+			} else if ($this->dif == 1) {
+				$this->Punto($mis_puntos[92],$elem[9201],Info(1,'chk'),9201);
+			}
+
+			if (($puntos[9202]=='duda')&&(($z==0)||($z==2))) {
+				$this->Punto('duda',$elem[9202],Info(9202,'duda'),9202);
+			} else if (($puntos[9202]=='na')&&(($z==0)||($z==4))) {
+				$this->Punto('na',$elem[9202],Info(9202,'na'),9202);
+			} else if ($this->dif == 1) {
+				$this->Punto($mis_puntos[92],$elem[9202],Info(1,'chk'),9202);
+			}
+		}
 	break;
 
 	case 91:
@@ -948,20 +1019,23 @@ class checkpoint {
 	break;
 
 	case 92:
-		if (($puntos[9201]=='duda')&&(($z==0)||($z==2))) {
-			$this->Punto('duda',$elem[9201],Info(9201,'duda'),9201);
-		} else if (($puntos[9201]=='na')&&(($z==0)||($z==4))) {
-			$this->Punto('na',$elem[9201],Info(9201,'na'),9201);
-		} else if ($this->dif == 1) {
-			$this->Punto($mis_puntos[92],$elem[9201],Info(1,'chk'),9201);
-		}
+		if($_SESSION['emag'] == false)
+		{
+			if (($puntos[9201]=='duda')&&(($z==0)||($z==2))) {
+				$this->Punto('duda',$elem[9201],Info(9201,'duda'),9201);
+			} else if (($puntos[9201]=='na')&&(($z==0)||($z==4))) {
+				$this->Punto('na',$elem[9201],Info(9201,'na'),9201);
+			} else if ($this->dif == 1) {
+				$this->Punto($mis_puntos[92],$elem[9201],Info(1,'chk'),9201);
+			}
 
-		if (($puntos[9202]=='duda')&&(($z==0)||($z==2))) {
-			$this->Punto('duda',$elem[9202],Info(9202,'duda'),9202);
-		} else if (($puntos[9202]=='na')&&(($z==0)||($z==4))) {
-			$this->Punto('na',$elem[9202],Info(9202,'na'),9202);
-		} else if ($this->dif == 1) {
-			$this->Punto($mis_puntos[92],$elem[9202],Info(1,'chk'),9202);
+			if (($puntos[9202]=='duda')&&(($z==0)||($z==2))) {
+				$this->Punto('duda',$elem[9202],Info(9202,'duda'),9202);
+			} else if (($puntos[9202]=='na')&&(($z==0)||($z==4))) {
+				$this->Punto('na',$elem[9202],Info(9202,'na'),9202);
+			} else if ($this->dif == 1) {
+				$this->Punto($mis_puntos[92],$elem[9202],Info(1,'chk'),9202);
+			}
 		}
 	break;
 

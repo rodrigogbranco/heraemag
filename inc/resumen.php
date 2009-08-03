@@ -60,7 +60,15 @@ class Resumen {
 				if (array_key_exists($v, $wcag1)) {
 					$x = $p.$mis_puntos[$v];
 				}
-				$resultados[$x]++;
+				/*RGB begin*/
+				if($_SESSION['emag'] == true)
+				{
+					if($v != 53 && $v != 56 && $v != 92 && $v != 72)
+						$resultados[$x]++;
+				}
+				else
+					$resultados[$x]++;
+				/*RGB end*/
 			}
 		}
 		$this->t_duda = $resultados['Aduda'] + $resultados['AAduda'] + $resultados['AAAduda'];
