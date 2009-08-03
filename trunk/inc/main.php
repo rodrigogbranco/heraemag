@@ -18,7 +18,28 @@ cleanAll();
 
 /*RGB begin*/
 if(isset($_POST['choose']))
+{
 	$_SESSION['choose'] = $_POST['choose'];
+	
+	if ($_SESSION['choose'] == 'emag')
+	{
+		$_SESSION['emag'] = true;
+		$_SESSION['wcag'] = false;
+	}
+	else
+	{
+		$_SESSION['wcag'] = true;
+		$_SESSION['emag'] = false;
+	}
+}
+else
+{
+	if(!isset($_SESSION['emag']))
+	{
+		$_SESSION['wcag'] = false;
+		$_SESSION['emag'] = false;
+	}
+}
 /*RGB end*/
 
 $variables = null;

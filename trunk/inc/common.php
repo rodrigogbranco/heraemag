@@ -1320,7 +1320,7 @@ function changeVariables()
 						{
 							if (isset($emag[$wcagToEmag[$bak]]))
 								$wcag[$bak] = $emag[$wcagToEmag[$bak]];
-								
+							
 							$mis_puntos[$bak] = $conteudo;
 						}
 					}
@@ -1336,6 +1336,27 @@ function changeVariables()
 							$puntos[$bak] = $conteudo;
 					}
 				}
+				
+				/*removendo duplicidades*/
+				$order_result = array('na' => 0, 'bien' => 1, 'duda' => 2, 'mal' => 3);
+				
+				if ($order_result[$mis_puntos[33]] < $order_result[$mis_puntos[53]])
+					$mis_puntos[33] = $mis_puntos[53];
+				if ($order_result[$mis_puntos[42]] < $order_result[$mis_puntos[56]])
+					$mis_puntos[42] = $mis_puntos[56];
+				if ($order_result[$mis_puntos[81]] < $order_result[$mis_puntos[92]])
+					$mis_puntos[81] = $mis_puntos[92];
+				if ($order_result[$mis_puntos[71]] < $order_result[$mis_puntos[72]])
+					$mis_puntos[71] = $mis_puntos[72];
+					
+				if ($order_result[$puntos[33]] < $order_result[$puntos[53]])
+					$puntos[33] = $puntos[53];
+				if ($order_result[$puntos[42]] < $order_result[$puntos[56]])
+					$puntos[42] = $puntos[56];
+				if ($order_result[$puntos[81]] < $order_result[$puntos[92]])
+					$puntos[81] = $puntos[92];
+				if ($order_result[$puntos[71]] < $order_result[$puntos[72]])
+					$puntos[71] = $puntos[72];					
 			}
 		}
 }
