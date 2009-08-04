@@ -111,6 +111,7 @@ class Resumen {
 		// ----------------------------------------- end VVB
 
 		global $totales, $lang, $wcag, $param, $marcos, $fecha, $nombre, $lang, $software;
+		global $emag;
 		$note_a = '<p class="nota"><img src="img/nota.gif" alt="'.$lang['ico_alt_aviso'].'" class="ico" /> ';
 		$note_b = "</p>\n";
 
@@ -233,10 +234,22 @@ class Resumen {
 <p><em><?php echo $lang['p_nav_pautas']; ?></em></p>
 <ul class="pr_lista">
 <?php
-		for ($x=1; $x < 15; $x++) {
-			$wc = $x * 10;
-			echo '<li><a href="'.PHP_SELF.$param.'&amp;pt='.$x.'" title="'.$wcag[$wc].'">'.sprintf($lang['li_nav_pautas'], $x).'</a></li>'."\n";
+		/*RGB begin*/
+		if($_SESSION['emag'] == false)
+		{
+			for ($x=1; $x < 15; $x++) {
+				$wc = $x * 10;
+				echo '<li><a href="'.PHP_SELF.$param.'&amp;pt='.$x.'" title="'.$wcag[$wc].'">'.sprintf($lang['li_nav_pautas'], $x).'</a></li>'."\n";
+			}
 		}
+		else
+		{
+			for ($x=1; $x < 9; $x++) {
+				$wc = $x * 10;
+				echo '<li><a href="'.PHP_SELF.$param.'&amp;pt='.$x.'" title="'.$emag[$wc].'">'.sprintf($lang['li_nav_pautas'], $x).'</a></li>'."\n";
+			}			
+		}
+		/*RGB end*/
 ?>
 </ul>
 
@@ -314,11 +327,24 @@ class Resumen {
 
 		if ($by == 'pauta') {
 			echo '<dl class="submenu"><dt style="font-size:80%">'.$lang['h3_nav_pautas'].':</dt>'."\n";
-			for ($i=1; $i < 15; $i++) {
-				if (PT == $i) {
-					echo '<dd class="actual">'.$i.'</dd>'."\n";
-				} else {
-					echo '<dd><a href="'.PHP_SELF.$param.'&amp;pt='.$i.'">'.$i.'</a></dd>'."\n";
+			if($_SESSION['emag'] == false)
+			{
+				for ($i=1; $i < 15; $i++) {
+					if (PT == $i) {
+						echo '<dd class="actual">'.$i.'</dd>'."\n";
+					} else {
+						echo '<dd><a href="'.PHP_SELF.$param.'&amp;pt='.$i.'">'.$i.'</a></dd>'."\n";
+					}
+				}
+			}
+			else
+			{
+				for ($i=1; $i < 9; $i++) {
+					if (PT == $i) {
+						echo '<dd class="actual">'.$i.'</dd>'."\n";
+					} else {
+						echo '<dd><a href="'.PHP_SELF.$param.'&amp;pt='.$i.'">'.$i.'</a></dd>'."\n";
+					}
 				}
 			}
 			echo '</dl>'."\n\n";
