@@ -10,7 +10,10 @@ if (AN == 1) {
 
 if (PT > 0) {
 	echo '<h2 style="margin-top:3em">'.$lang['pauta_sin'].' '.PT.' :<br />';
-	echo $wcag[PT * 10];
+	if($_SESSION['emag'] == false)
+		echo $wcag[PT * 10];
+	else
+		echo $emag[PT * 10];
 	echo "</h2>\n";
 	echo $mis_resultados;
 } else if (PR > 0) {
@@ -42,50 +45,84 @@ if (PT > 0) {
 $ver_resultado = new checkpoint();
 
 if (PT > 0) {
-	switch (PT) {
-		case 1:
-			$lst = array(11, 12, 13, 14, 15);
-		break;
-		case 2:
-			$lst = array(21, 22);
-		break;
-		case 3:
-			$lst = array(31, 32, 33, 34, 35, 36, 37);
-		break;
-		case 4:
-			$lst = array(41, 42, 43);
-		break;
-		case 5:
-			$lst = array(51, 52, 53, 54, 55, 56);
-		break;
-		case 6:
-			$lst = array(61, 62, 63, 64, 65);
-		break;
-		case 7:
-			$lst = array(71, 72, 73, 74, 75);
-		break;
-		case 8:
-			$lst = array(81);
-		break;
-		case 9:
-			$lst = array(91, 92, 93, 94, 95);
-		break;
-		case 10:
-			$lst = array(101, 102, 103, 104, 105);
-		break;
-		case 11:
-			$lst = array(111, 112, 113, 114);
-		break;
-		case 12:
-			$lst = array(121, 122, 123, 124);
-		break;
-		case 13:
-			$lst = array(131, 132, 133, 134, 135, 136, 137, 138, 139, 1310);
-		break;
-		case 14:
-			$lst = array(141, 142, 143);
-		break;
+	/*RGB begin*/
+	if($_SESSION['emag'] == false)
+	{
+		switch (PT) {
+			case 1:
+				$lst = array(11, 12, 13, 14, 15);
+			break;
+			case 2:
+				$lst = array(21, 22);
+			break;
+			case 3:
+				$lst = array(31, 32, 33, 34, 35, 36, 37);
+			break;
+			case 4:
+				$lst = array(41, 42, 43);
+			break;
+			case 5:
+				$lst = array(51, 52, 53, 54, 55, 56);
+			break;
+			case 6:
+				$lst = array(61, 62, 63, 64, 65);
+			break;
+			case 7:
+				$lst = array(71, 72, 73, 74, 75);
+			break;
+			case 8:
+				$lst = array(81);
+			break;
+			case 9:
+				$lst = array(91, 92, 93, 94, 95);
+			break;
+			case 10:
+				$lst = array(101, 102, 103, 104, 105);
+			break;
+			case 11:
+				$lst = array(111, 112, 113, 114);
+			break;
+			case 12:
+				$lst = array(121, 122, 123, 124);
+			break;
+			case 13:
+				$lst = array(131, 132, 133, 134, 135, 136, 137, 138, 139, 1310);
+			break;
+			case 14:
+				$lst = array(141, 142, 143);
+			break;
+		}
 	}
+	else
+	{
+		switch (PT) {
+			case 1:
+				$lst = array(134, '111e', 63, '121e');
+			break;
+			case 2:
+				$lst = array(21, 22, 61, 55, 52, 62, 33, 53, 54, 42, 56);
+			break;
+			case 3:
+				$lst = array(32, 34, 36, 31, 37, 35);
+			break;
+			case 4:
+				$lst = array(43, 41, 141, 122, 64, 143, 123, 104, 124, 42, 56, 113, 142);
+			break;
+			case 5:
+				$lst = array(65, 121, 64, 63);
+			break;
+			case 6:
+				$lst = array(71, 72, 94, 73, 114, 75, 101, 93, 112, 95);
+			break;
+			case 7:
+				$lst = array(1310, 134, 102, 135, 136, 137, 138, 139, 131, 313);
+			break;
+			case 8:
+				$lst = array(114);
+			break;
+		}
+	}
+	/*RGB end*/
 
 	$last = end($lst);
 	foreach ($lst as $x => $y) {

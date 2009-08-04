@@ -1,12 +1,12 @@
 <?php
-$wcagToEmag[10] = 0;
-$wcagToEmag[20] = 0;
-$wcagToEmag[30] = 0;
-$wcagToEmag[40] = 0;
-$wcagToEmag[50] = 0;
-$wcagToEmag[60] = 0;
-$wcagToEmag[70] = 0;
-$wcagToEmag[80] = 0;
+$wcagToEmag[10] = 10;
+$wcagToEmag[20] = 20;
+$wcagToEmag[30] = 30;
+$wcagToEmag[40] = 40;
+$wcagToEmag[50] = 50;
+$wcagToEmag[60] = 60;
+$wcagToEmag[70] = 70;
+$wcagToEmag[80] = 80;
 $wcagToEmag[90] = 0;
 $wcagToEmag[100] = 0;
 $wcagToEmag[110] = 0;
@@ -149,7 +149,7 @@ $emag[40] = 'Assegure que toda informação seja interpretada corretamente, com cl
 $emag[50] = 'Assegure que as tecnologias utilizadas funcionem - de maneira acessível - independente de programas, versões e futuras mudanças.';
 $emag[60] = 'Assegure sempre o controle do usuário sobre a navegação do sítio.';
 $emag[70] = 'Identifique claramente quais são os mecanismos de navegação.';
-$emag[80] = 'Em casos não contemplados pelas diretrizes anteriores, utilize sempre recursos conhecidos, por instituições com propriedade no assunto, como <em>tecnologias acessíveis</em>';
+$emag[80] = 'Em casos não contemplados pelas diretrizes anteriores, utilize sempre recursos conhecidos, por instituições com propriedade no assunto, como tecnologias acessíveis';
 $emag[11] = 'Identificar o principal idioma utilizado nos documentos. O idioma do documento deve ser especificado na expressão HTML.';
 $emag[12] = 'Identificar claramente quaisquer mudanças de idioma no texto de um documento, bem como nos equivalentes textuais (por ex., legendas de imagens).';
 $emag[13] = 'Fornecer meios para ignorar e explicar inserções de arte ASCII com várias linhas, tais como <span lang="en">links</span> de âncora ou páginas alternativas.';
