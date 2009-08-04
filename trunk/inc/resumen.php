@@ -111,7 +111,7 @@ class Resumen {
 		// ----------------------------------------- end VVB
 
 		global $totales, $lang, $wcag, $param, $marcos, $fecha, $nombre, $lang, $software;
-		global $emag;
+		global $emag, $area, $desc;
 		$note_a = '<p class="nota"><img src="img/nota.gif" alt="'.$lang['ico_alt_aviso'].'" class="ico" /> ';
 		$note_b = "</p>\n";
 
@@ -253,6 +253,22 @@ class Resumen {
 ?>
 </ul>
 
+<?php
+/*RGB begin - Áreas de visão do cidadão*/
+	if($_SESSION['emag'] == true)
+	{
+		echo "<hr><h3>".$lang['h3_nav_area']."</h3>";
+		echo"<p><em>".$lang['p_nav_area']."</em></p>";
+		echo '<ul class="pr_lista">';
+		for ($x=1; $x < 5; $x++) {
+			$wc = $x * 10;
+			echo '<li><a href="'.PHP_SELF.$param.'&amp;pa='.$x.'" title="'.$desc[$wc].'">'.$area[$wc].'</a></li>'."\n";
+		}
+		echo "</ul>";
+	}
+/*RGB end*/ 
+?>
+
 <? // Alteração VVB - 28/10/2008 ?>
 
 <h3 id="metrics"><?php echo $lang['met_avl']; ?></h3>
@@ -315,7 +331,7 @@ class Resumen {
 
 	function Navega($by) {
 		/*RGB begin*/
-		global $variables;
+		global $variables, $area;
 		if (!$variables)
 		{
 			changeVariables();
@@ -367,6 +383,17 @@ class Resumen {
 				$num++;
 			}
 			echo "</table>\n\n";
+		} else if($by == 'area')
+		{
+			echo '<dl class="submenu"><dt style="font-size:80%">'.$lang['h3_nav_area'].':</dt>'."\n";
+			for ($i=1; $i < 5; $i++) {
+				if (PA == $i) {
+					echo '<dd class="actual">'.$area[$i*10].'</dd>'."\n";
+				} else {
+					echo '<dd><a href="'.PHP_SELF.$param.'&amp;pa='.$i.'">'.$area[$i*10].'</a></dd>'."\n";
+				}
+			}
+			echo '</dl>'."\n\n";
 		}
 		//echo '<div class="caja">'."\n";
 	} // Fin función Details

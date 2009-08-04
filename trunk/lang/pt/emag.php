@@ -207,4 +207,14 @@ $emag[311] = 'Complementar o texto com apresentações gráficas ou sonoras, sempre
 $emag[312] = 'Identificar claramente o destino de cada <span lang="en">link</span>, botão ou elemento que submeta uma ação. Prefira utilizar textos mais claros e objetivos, mostrando o verdadeiro sentido e o destino do <span lang="en">link</span>. Evite usar frases como <em>"Clique Aqui"</em>.';
 $emag[313] = 'Informar previamente ao usuário o destino e resultado de cada ação, quando houver campos e elementos do formulário, como, por exemplo, caixas de seleção, que submetem automaticamente o conteúdo ao se efetuar uma determinada ação.';
 $emag[314] = 'Fornece metadados para acrescentar informações semânticas e descritivas do sítio, que sejam úteis para os mecanismos de busca.';
+
+$area[10] = 'Área da Percepção';
+$area[20] = 'Área da Operação';
+$area[30] = 'Área do Entendimento';
+$area[40] = 'Área da Compatibilidade';
+
+$desc[10] = 'Trata de benefícios relacionados à apresentação do conteúdo, da informação. Ela preocupa-se com a percepção de elementos como gráficos, sons, imagens, multimída e equivalentes.';
+$desc[20] = 'Preocupa-se com a manipulação da informação, do conteúdo. Ou seja, a Área da Operação deve garantir formas alternativas ao acesso às informações através de maneiras diferenciadas de navegação ou técnica similar. Percebe-se, também, que é de responsabilidade da Operação garantir sempre ao usuário o controle da navegação e interação com o sítio';
+$desc[30] = 'Essa, por sua vez, trata de questões relacionadas à compreensão do conteúdo publicado. Ela deve garantir que todo o conteúdo apresentado seja de fácil compreensão para qualquer tipo de usuário.';
+$desc[40] = 'Aborda as questões como a necessidade de utilizarmo-nos sempre de tecnologias acessíveis, e compatíveis com o modelo aqui proposto.';
 ?>

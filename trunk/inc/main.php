@@ -128,6 +128,7 @@ if (!empty($_REQUEST['url'])) {  // An URI is sent
 	if ($_REQUEST['hx']) { define('HX', $_REQUEST['hx']); } // Chkpoint help
 	if ($_REQUEST['hl']) { define('HL', $_REQUEST['hl']); } // Manual
 	if ($_REQUEST['in']) { define('IN', $_REQUEST['in']); } // Report
+	if ($_REQUEST['pa']) { define('PA', $_REQUEST['pa']); } // Area
 	if ($_REQUEST['an']) { // Register results
 		define('AN', $_REQUEST['an']);
 		$param .= '&amp;an=1';
@@ -149,7 +150,12 @@ if (!empty($_REQUEST['url'])) {  // An URI is sent
 			include_once('inc/header.php');
 			$New_Resumen->Navega('pauta');
 			require_once('inc/content.php');
-
+		} else if($_REQUEST['pa']) { //Check a area 
+			$opt_head['bread'] = 'pauta';
+			$opt_head['bar'] = 'icons';
+			include_once('inc/header.php');
+			$New_Resumen->Navega('area');
+			require_once('inc/content.php');
 		} else if ($_REQUEST['pr']) { // Check a priority
 
 			if (PR == 1) { define ('_A', 'A'); }

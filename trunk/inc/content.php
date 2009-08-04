@@ -41,6 +41,13 @@ if (PT > 0) {
 	echo "</h2>\n";
 	echo $mis_resultados;
 }
+else if (PA > 0)
+{
+	echo '<h2 style="margin-top:3em">'.$area[PA * 10].' :<br />';
+	echo $desc[PA * 10];
+	echo "</h2>\n";
+	echo $mis_resultados;
+}
 
 $ver_resultado = new checkpoint();
 
@@ -123,7 +130,30 @@ if (PT > 0) {
 		}
 	}
 	/*RGB end*/
+}
 
+/*RGB begin*/
+else if (PA > 0)
+{
+		switch (PA) {
+			case 1:
+				$lst = array('111e', 21, 22, 61, 71, 72, 12, 55, 52, 62, 65, 121, 122, 63, '121e', 14, 73, 34, 36, 37, 143, 35, 123, 33, 53, 54, 133, 27, 105, 142);
+			break;
+			case 2:
+				$lst = array(1310, 21, 94, 134, 62, 65, 121, 63, 73, 114, 32, 74, 75, 101, 123, 104, 124, 102, 93, 112, 95, 105, 135, 136, 137, 139, 313);
+			break;
+			case 3:
+				$lst = array('111e', 43, 41, 141, 31, 123, 124, 105, 113, 136, 138, 139, 142, 131);
+			break;
+			case 4:
+				$lst = array(62, 65, 64, 63, 81, 92, 112);
+			break;
+		}	
+}
+/*RGB end*/
+
+if (PT > 0 || PA > 0)
+{
 	$last = end($lst);
 	foreach ($lst as $x => $y) {
 		if ($mis_puntos[$y] != $puntos[$y]) {
@@ -152,8 +182,9 @@ if (PT > 0) {
 			$ver_resultado->Este_Punto($y,$wcag1[$y]);
 		}
 	}
+}
 
-} else if (PR > 0) {
+ else if (PR > 0) {
 
 	switch (PR) {
 		case 1:
