@@ -225,6 +225,8 @@ $lang['txt_a_mail'] = 'Contacto';
 $lang['formato_fecha'] = 'd/m/Y - G:i \G\M\T';
 
 /*RGB begin*/
+$lang['h3_nav_area'] = 'Navegar por Áreas de Visão do Cidadão';
+$lang['p_nav_area'] = 'Utilize os <span lang="en" xml:lang="en">links</span> para ver os pontos correspondentes a cada área de visão do cidadão. Mostram-se todos os pontos, independentemente dos resultados obtidos na análise automática.';
 $choose['wcag'] = 'WCAG 1.0';
 $choose['emag'] = 'eMag 2.0';
 /*RGB end*/
