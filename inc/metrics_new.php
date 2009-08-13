@@ -1,6 +1,6 @@
 <?php
-require_once('inc/file.php');
-require_once("inc/parse.php");
+require('inc/file.php');
+require ("inc/parse.php");
 
 class Metric{
 

@@ -1,7 +1,7 @@
 <?php
 
 // Alteração VVB - 27/10/2008
-require("metrics.php");
+require_once("metrics.php");
 // ----------------------------------------- end VVB
 
 /*=======================================
@@ -14,7 +14,7 @@ require("metrics.php");
 	function Obter_Resultados()
 	{
 		$metrics = new Metric;
-		$metrics->barriers();
+		$metrics->barriers(URL);
 		$results = array();
 		$results[0] = $metrics->potential_problems("auto");
 		$results[1] = $metrics->WAB("auto");

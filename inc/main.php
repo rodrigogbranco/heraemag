@@ -3,7 +3,7 @@ session_start();
 
 //ini_set("display_errors","1");
 error_reporting(E_ERROR | /*E_WARNING |*/ E_PARSE);
-//ini_set('error_reporting', E_ALL);
+ini_set('error_reporting', E_ALL);
 
 // Includes some necesary files
 require_once('inc/config.php'); // Config file
