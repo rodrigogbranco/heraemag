@@ -305,12 +305,13 @@ var $meta_redirect = ""; // redirect meta tag found
 		"stripslashes('\\1').stripslashes(htmlspecialchars('\\2')).'\\3'",
 		"stripslashes('\\1').stripslashes(htmlspecialchars('\\2')).'\\3'",
 		"" );
-		$fp = preg_replace($search,$replace,$this->results);
+		$fp = $this->results;
+		//$fp = preg_replace($search,$replace,$this->results);
+		//var_dump($this->fp);
 		preg_match_all("@(<[^>]+>)([^<]*)@m", $fp, $out, PREG_PATTERN_ORDER);
 
 		$s_tag = array ("@\n+@", "@\s\s+@", "@\s*=\s*@");
 		$r_tag = array (" ", " ", "=");
-
 		for ($i=0; $i < count($out[0]); $i++) {
 			$tag_tmp = preg_replace($s_tag, $r_tag, $out[1][$i]);
 			$tags[$i] = $tag_tmp;

@@ -5,9 +5,20 @@
   Show the reviewed pag           
 ================================*/
 
+/*RGB begin*/
+//ini_set("display_errors","1");
+error_reporting(E_ERROR | /*E_WARNING |*/ E_PARSE);
+//ini_set('error_reporting', E_ALL);
+
+define ('IDIOMA', 'pt');
+
+$tags = array();
+/*RGB end*/
+
 require('inc/config.php');
 require('inc/file.php');
 require('inc/common.php');
+require('inc/parse.php');
 cleanAll();
 define ('OPTION', $_REQUEST['opt']);
 define ('ID', $_REQUEST['id']);
@@ -128,6 +139,43 @@ if (OPTION == 'code') {
 
 
 } else if (OPTION == 'page') {
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="<?php echo IDIOMA; ?>" xml:lang="<?php echo IDIOMA; ?>">
+<head>
+	<title>HERA: <?php echo sprintf($lang['view_rev_que'], $elem[QUE]); ?></title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link href="<?php echo WEBSITE; ?>superhera.css" type="text/css" rel="stylesheet" />
+<link rel="icon" href="<?php echo WEBSITE; ?>img/favicon.ico" type="image/x-icon" />
+<style type="text/css">
+body {
+	font-family : verdana, sans-serif;
+	margin: 0px;
+	padding: 0px;
+	background-color: #fff;
+	color: #000;
+	font-size : 0.9em;
+}
+h1 {
+	font-weight: bold;
+	font-variant: small-caps;
+	font-size: 150%;
+	text-align: left;
+	margin-left: 5%;
+}
+dl { margin: 1em 5%; }
+dl dt { color: #900; font: menu; margin-top: 1.5em;}
+dt span { color: #999; }
+dt strong { color: #000; font-family : verdana, sans-serif; }
+dl dd { color: #00f; font: menu; margin-left: 0px; padding-left: 1em; }
+.duda { color: #000; background-color: #eef9ff; }
+.mal { color: #000; background-color: #ffeef6; }
+img.ico { width: 12px; height: 12px; }
+</style>
+</head>
+<body>
+
+<?php
 
 function Add($este_tag,$mode=3,$res=DUDA,$txt='',$code=0,$in=0) {
 	global $tag;
@@ -167,6 +215,7 @@ function Add($este_tag,$mode=3,$res=DUDA,$txt='',$code=0,$in=0) {
 } // Fin function
 
 	$quitar_estilos = $_REQUEST['sincss'];
+
 	if (!$File->fetch(URL, '', 'arry')) {
 		exit(ucfirst($lang['file_error']));
 	}
@@ -193,7 +242,6 @@ function Add($este_tag,$mode=3,$res=DUDA,$txt='',$code=0,$in=0) {
 	$heradiv = '<div id="heradiv"><span id="icons">'.$icocss.'</span> '.$view[QUE]."\n</div>";
 	$herahead = '';
 	$hojaestilohera = '<link href="'.WEBSITE.'superhera.css" rel="stylesheet" type="text/css" id="sidar" />'."\n".'<link rel="shortcut icon" href="'.WEBSITE.'img/favicon.ico" type="image/x-icon" />'."\n".'<script type="text/javascript" src="'.WEBSITE.'display.js"></script>'."\n";
-
 	if (QUE != 131) {
 		foreach ($tags as $key => $tag) {
 			preg_match("@<([\/\?\!]*[\w]+)@i", $tag, $el);
@@ -364,40 +412,6 @@ function Add($este_tag,$mode=3,$res=DUDA,$txt='',$code=0,$in=0) {
 
 	} else { // Punto 13.1
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="<?php echo IDIOMA; ?>" xml:lang="<?php echo IDIOMA; ?>">
-<head>
-	<title>HERA: <?php echo sprintf($lang['view_rev_que'], $elem[QUE]); ?></title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<link href="<?php echo WEBSITE; ?>superhera.css" type="text/css" rel="stylesheet" />
-<link rel="icon" href="<?php echo WEBSITE; ?>img/favicon.ico" type="image/x-icon" />
-<style type="text/css">
-body {
-	font-family : verdana, sans-serif;
-	margin: 0px;
-	padding: 0px;
-	background-color: #fff;
-	color: #000;
-	font-size : 0.9em;
-}
-h1 {
-	font-weight: bold;
-	font-variant: small-caps;
-	font-size: 150%;
-	text-align: left;
-	margin-left: 5%;
-}
-dl { margin: 1em 5%; }
-dl dt { color: #900; font: menu; margin-top: 1.5em;}
-dt span { color: #999; }
-dt strong { color: #000; font-family : verdana, sans-serif; }
-dl dd { color: #00f; font: menu; margin-left: 0px; padding-left: 1em; }
-.duda { color: #000; background-color: #eef9ff; }
-.mal { color: #000; background-color: #ffeef6; }
-img.ico { width: 12px; height: 12px; }
-</style>
-</head>
-<body>
 <div id="heradiv"><span id="icons">
 <a href="<?php echo WEBSITE; ?>view.php?id=<?php echo ID; ?>&amp;pto=<?php echo QUE; ?>&amp;lng=<?php echo IDIOMA; ?>&amp;opt=code" title="<?php echo $lang['dd_tit_code'] ?>"><img src="<?php echo WEBSITE; ?>img/vercod.gif" alt="<?php echo $lang['dd_alt_code']; ?>" id="heracodeimg" /></a>
 </span> <?php echo $view['p_131']; ?></div>

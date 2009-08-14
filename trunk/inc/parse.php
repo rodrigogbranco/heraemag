@@ -75,6 +75,7 @@ class Parse {
 
 		if ($redir != "") { $this->tot['url_redir'] = $redir; }
 		if ($meta != "") { $this->tot['meta_redir'] = $meta; }
+		
 
 		foreach ($tags as $key => $tag) {
 			preg_match("@<([/|\?|!]*[\w]+)@i", $tag, $el);

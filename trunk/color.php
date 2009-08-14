@@ -1,12 +1,20 @@
 <?php
+//ini_set("display_errors","1");
+error_reporting(E_ERROR | /*E_WARNING |*/ E_PARSE);
+//ini_set('error_reporting', E_ALL)
+
+define ('IDIOMA', 'pt');
+require_once('inc/config.php');
 require_once('inc/common.php');
+
 cleanAll();
 if ($_REQUEST['lng']) {
 	define ('IDIOMA', $_REQUEST['lng']);
 } else {
 	define ('IDIOMA', 'es');
 }
-require('lang/'.IDIOMA.'/lang.php');
+require_once('lang/'.IDIOMA.'/lang.php');
+
 if ($_REQUEST['url']) {
 	$pagina = $_REQUEST['url'];
 } elseif ($_REQUEST['calcular']) {
@@ -14,6 +22,7 @@ if ($_REQUEST['url']) {
 } else {
 	$pagina = 'http://';
 }
+
 if ($_REQUEST['url'] || $_REQUEST['calcular']) {
 	$miga = '<a href="'.PHP_SELF.'">'.$lang['color_title'].'</a> &raquo; '.$lang['color_title2'];
 	$titulo = $lang['color_title2'];
@@ -381,7 +390,7 @@ function Limpiar($esto) {
 	return $esto;
 }
 
-function Absolute_URL($base, $url) {
+/*function Absolute_URL($base, $url) {
 	global $totales;
 
 		@extract(parse_url($url));
@@ -427,7 +436,7 @@ function Absolute_URL($base, $url) {
 
 			do {
 				$oldpath = $path;
-				$path = preg_replace('@/[^/]*/\.\./@','/',$path);}
+				$path = preg_replace('@/[^/]/\.\./@','/',$path);} //changed
 			while($path != $oldpath);
 
 			$path = preg_replace('@/[^/]/\.\.$@','/',$path);
@@ -450,7 +459,7 @@ function Absolute_URL($base, $url) {
 	}
 	if (isset($fragment)) $url .= "#$fragment";
 	return $url;
-}
+}*/
 ?>
 <?php echo (count($pares) > 0)? $muestra_pares : ''; ?>
 
