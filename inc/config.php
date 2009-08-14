@@ -1,5 +1,5 @@
 <?php
-$website = 'http://www.sidar.org/hera/';
+$website = 'http://localhost/heraemag/';
 $default_lang = 'es';
 $db_table = 'ariadna';
 
