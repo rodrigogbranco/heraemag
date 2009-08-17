@@ -217,4 +217,6 @@ $desc[10] = 'Trata de benefícios relacionados à apresentação do conteúdo, da inf
 $desc[20] = 'Preocupa-se com a manipulação da informação, do conteúdo. Ou seja, a Área da Operação deve garantir formas alternativas ao acesso às informações através de maneiras diferenciadas de navegação ou técnica similar. Percebe-se, também, que é de responsabilidade da Operação garantir sempre ao usuário o controle da navegação e interação com o sítio';
 $desc[30] = 'Essa, por sua vez, trata de questões relacionadas à compreensão do conteúdo publicado. Ela deve garantir que todo o conteúdo apresentado seja de fácil compreensão para qualquer tipo de usuário.';
 $desc[40] = 'Aborda as questões como a necessidade de utilizarmo-nos sempre de tecnologias acessíveis, e compatíveis com o modelo aqui proposto.';
+
+$isemag = false;
 ?>

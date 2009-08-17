@@ -568,6 +568,74 @@ case 1105:
 break;
 
 case 1106:
+
+case '11101e':
+if (stristr($tag,"<img")) {
+	if (stristr($tag,"alt=")) {
+		Add($tag,3,DUDA,htmlspecialchars($tag).'<br />');
+	} else {
+		Add($tag,3,MAL,htmlspecialchars($tag).'<br />');
+	}
+}
+break;
+
+case '11102e':
+if (preg_match("@<input .*type=['|\"]?image[^>]*>@i", $tag)) {
+	if (stristr($tag,"alt=")) {
+		Add($tag,3,DUDA,htmlspecialchars($tag).'<br />');
+	} else {
+		Add($tag,3,MAL,htmlspecialchars($tag).'<br />');
+	}
+}
+break;
+
+case '11103e':
+if (stristr($tag,"<area")) {
+	if (stristr($tag,"alt=")) {
+		Add($tag,6,DUDA);
+	} else {
+		Add($tag,6,MAL);
+	}
+}
+if (stristr($tag," usemap")) {
+	Add($tag,3,DUDA,$lang['view_usemap'].'<br />');
+}
+break;
+
+case '12101e':
+if ($body == 1) {
+	if (stristr($tag,"<script")) {
+		Add($tag,1,DUDA,htmlspecialchars($tag));
+	}
+	if (stristr($tag,"</script")) {
+		Add($tag,2);
+	}
+	if (stristr($tag,"<noscript")) {
+		Add($tag,4,DUDABIS);
+	}
+	if (stristr($tag,"</noscript")) {
+		Add($tag,5);
+	}
+}
+break;
+
+case '12102e':
+	if (stristr($tag,"<embed")) {
+		Add($tag,1,DUDA,htmlspecialchars($tag).'<br />');
+	}
+	if (stristr($tag,"</embed")) {
+		Add($tag,2);
+	}
+	if (stristr($tag,"<noembed")) {
+		Add($tag,4,DUDABIS);
+	}
+	if (stristr($tag,"</noembed")) {
+		Add($tag,2);
+	}
+break;
+
+case '12103e':
+
 case 8103:
 	if (stristr($tag,"<applet")) {
 		Add($tag,1,DUDA,htmlspecialchars($tag).'<br />');
@@ -578,6 +646,8 @@ case 8103:
 break;
 
 case 1107:
+case '11104e':
+case '12104e':
 case 1302:
 case 1402:
 case 8104:
@@ -599,12 +669,14 @@ case 1108:
 break;
 
 case 1109:
+case '11105e':
 case 1110:
+case '11106e':
 case 1303:
 case 1403:
 if (stristr($tag,"<a ")) {
 	preg_match("@href=([\"\'])? (?(1) (.*?)\\1 | ([^\s\>]+))@ix",$tag,$outa);
-	if (QUE == 1109) {
+	if ((QUE == 1109) || (QUE == '11105e')) {
 		if (preg_match("@\.(aif|aifc|aiff|au|m3u|mid|mp3|ra|ram|rmi|snd|wav)$@i",$outa[2])) {
 			Add($tag,1,DUDA,htmlspecialchars($tag).'<br />');
 			$aabierto = 1;
@@ -617,7 +689,7 @@ if (stristr($tag,"<a ")) {
 	}
 } else if (stristr($tag,"<area ")) {
 	preg_match("@href=([\"\'])? (?(1) (.*?)\\1 | ([^\s\>]+))@ix",$tag,$outa);
-	if (QUE == 1109) {
+	if ((QUE == 1109) || (QUE == '11105e')) {
 		if (preg_match("@\.(aif|aifc|aiff|au|m3u|mid|mp3|ra|ram|rmi|snd|wav)$@i",$outa[2])) {
 			Add($tag,6,DUDA);
 		}
@@ -1566,6 +1638,19 @@ if (OPTION == 'code') {
 	}
 }
 break;
+
+/*RGB begin*/
+case 313:
+if (OPTION == 'code') {
+	if (preg_match("@<form@i",$tag)) {
+		Add($tag,1,DUDA);
+	}
+	if (preg_match("@</form>@i",$tag)) {
+		Add($tag,2);
+	}
+}
+break;
+/*RGB end*/
 
 case 132:
 if (preg_match("@<(!doctype|meta|link|title)[^>]*>@i",$tag)) {
