@@ -24,6 +24,7 @@ class Parse {
 	
 	function This_Page($redir="", $meta="") {
 		global $tags, $contents;
+		global $isemag;
 		$dep_applet = array('hspace','vspace','align','archive','code', 'codebase','height','name','object','width');
 		$dep_basefont = array('size','color','face');
 		$dep_body = array('text','vlink','alink','link','background', 'bgcolor');
@@ -44,7 +45,6 @@ class Parse {
 			$this->pto[$res] = 'na';
 		}
 		
-		$isemag = false;
 		if(isset($_SESSION['choose']))
 		{
 			if($_SESSION['choose'] == 'emag')
@@ -110,11 +110,8 @@ class Parse {
 					
 				/*eMag action*/
 				case 'form':
-					if(isset($_SESSION['choose']))
-					{
-						if($_SESSION['choose'] == 'emag')
-							$this->pto[313] = 'duda';
-					}
+					if($isemag == true)
+						$this->pto[313] = 'duda';
 				break;
 
 				case 'a':
@@ -741,6 +738,7 @@ class Parse {
 	 =======================================*/
 
 	function Define_Results() {
+		global $isemag;
 
 		if ($this->tot['img'] > 0) {
 			if ($this->tot['img'] > $this->tot['alt_img']) {

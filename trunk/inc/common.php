@@ -1356,7 +1356,8 @@ function changeVariables()
 				if ($order_result[$puntos[81]] < $order_result[$puntos[92]])
 					$puntos[81] = $puntos[92];
 				if ($order_result[$puntos[71]] < $order_result[$puntos[72]])
-					$puntos[71] = $puntos[72];					
+					$puntos[71] = $puntos[72];
+
 			}
 		}
 }
