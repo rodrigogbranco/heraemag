@@ -305,9 +305,8 @@ var $meta_redirect = ""; // redirect meta tag found
 		"stripslashes('\\1').stripslashes(htmlspecialchars('\\2')).'\\3'",
 		"stripslashes('\\1').stripslashes(htmlspecialchars('\\2')).'\\3'",
 		"" );
-		$fp = $this->results;
-		//$fp = preg_replace($search,$replace,$this->results);
-		//var_dump($this->fp);
+		
+		$fp = preg_replace($search,$replace,$this->results);
 		preg_match_all("@(<[^>]+>)([^<]*)@m", $fp, $out, PREG_PATTERN_ORDER);
 
 		$s_tag = array ("@\n+@", "@\s\s+@", "@\s*=\s*@");
