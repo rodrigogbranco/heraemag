@@ -7,76 +7,6 @@ class Metric{
 	function defineConstants() {
 		/*--- Checkpoint 1.1 ---*/
 		
-		/*RGB begin*/
-		/* Alt text for images 1101*/
-		$this->type['11101e'] = 'auto';
-		$this->priority['11101e'] = 1;
-		$this->principle['11101e'] = 'p';
-
-		/* Alt text for inputs 1102*/
-		$this->type['11102e'] = 'auto';
-		$this->priority['11102e'] = 1;
-		$this->principle['11102e'] = 'p';
-
-		/* Alt text for inputs 1103*/
-		$this->type['11103e'] = 'auto';
-		$this->priority['11103e'] = 1;
-		$this->principle['11103e'] = 'p';
-
-		/* Alt for scripts 1104 - manual*/
-		$this->priority['12101e'] = 1;
-		$this->type['12101e'] = 'manual';
-		$this->principle['12101e'] = 'p';
-
-		/* Alt text for embed 1105*/
-		$this->type['12102e'] = 'manual';
-		$this->priority['12102e'] = 1;
-		$this->principle['12102e'] = 'p';
-
-		/* Applets 1106 - manual*/
-		$this->priority['12103e'] = 1;
-		$this->type['12103e'] = 'manual';
-		$this->principle['1210e'] = 'p';
-
-		/* Objects 1107 - manual*/
-		$this->priority['11104e'] = 1;
-		$this->type['11104e'] = 'manual';
-		$this->principle['11104e'] = 'p';
-		
-		/* Objects 1107 - manual*/
-		$this->priority['12104e'] = 1;
-		$this->type['12104e'] = 'manual';
-		$this->principle['12104e'] = 'p';
-
-		/* sounds 1109 - manual*/
-		$this->priority['12105e'] = 1;
-		$this->type['12105e'] = 'manual';
-		$this->principle['12105e'] = 'p';
-
-		/* multimedia 1110 - manual*/
-		$this->principle['12106e'] = 'p';
-		$this->priority['12106e'] = 1;
-		$this->type['12106e'] = 'manual';
-		$this->principle['12106e'] = 'p';
-
-		$this->principle['111e'] = 'p';
-		$this->priority_checkpoint['1.11'] = 1;
-		$this->principle_checkpoint['1.11'] = 'p';
-
-		$this->principle['121e'] = 'p';
-		$this->priority_checkpoint['1.21'] = 1;
-		$this->principle_checkpoint['1.21'] = 'p';
-
-		/* link target */
-
-		$this->priority['313'] = 2;
-		$this->type['313'] = 'manual';
-		$this->principle['313'] = 'o';
-
-		$this->priority_checkpoint['3.13'] = 2;
-		$this->principle_checkpoint['3.13'] = 'o';
-		/*RGB end*/
-		
 		/* Alt text for images 1101*/
 		$this->type['1101'] = 'auto';
 		$this->priority['1101'] = 1;
@@ -937,7 +867,7 @@ class Metric{
 	function barriers($url){
 
 		$user_agent = "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.8.0.10) Gecko/20070302 Ubuntu/dapper-security Firefox/1.5.0.10";
-		global $wcag1, $isemag;
+		global $wcag1;
 
 		//require('inc/file.php');
 		$File = new File(urldecode($url), $user_agent);
@@ -969,144 +899,70 @@ class Metric{
 				//print_r($parse_res->tot);
 
 				/*--- Checkpoint 1.1 ---*/
-				
-				if(isset($_SESSION['choose']))
-				{
-					if($_SESSION['choose'] == 'emag')
-					$isemag = true;
-					changeVariables();
+
+				/* Alt text for images 1101*/
+				$this->potential[1101] = $parse_res->tot['img'];
+				if ($parse_res->pto[1101] == "mal") {
+					$this->barriers[1101] = $parse_res->tot['img'] - $parse_res->tot['alt_img'];
+				} else {
+					$this->barriers[1101] = 0;
 				}
-				
-				if($isemag == false)
-				{
 
-					/* Alt text for images 1101*/
-					$this->potential[1101] = $parse_res->tot['img'];
-					if ($parse_res->pto[1101] == "mal") {
-						$this->barriers[1101] = $parse_res->tot['img'] - $parse_res->tot['alt_img'];
-					} else {
-						$this->barriers[1101] = 0;
-					}
-
-					/* Alt text for inputs 1102*/
-					$this->potential[1102] = $parse_res->tot['input_image'];
-					if ($parse_res->pto[1102] == "mal") {
-						$this->barriers[1102] = $parse_res->tot['input_image'] - $parse_res->tot['alt_input'];
-					} else {
-						$this->barriers[1102] = 0;
-					}
-
-					/* Alt text for inputs 1103*/
-					$this->potential[1103] = $parse_res->tot['area'];
-					if ($parse_res->pto[1103] == "mal") {
-						$this->barriers[1103] = $parse_res->tot['area'] - $parse_res->tot['alt_area'];
-					} else {
-						$this->barriers[1103] = 0;
-					}
-
-					/* Alt for scripts 1104 - manual*/
-					$this->potential[1104] = $parse_res->tot['script'];
-					$this->barriers[1104] = 0;
-
-					/* Alt text for embed 1105*/
-					$this->potential[1105] = $parse_res->tot['embed'];
-					if ($parse_res->pto[1105] == "mal") {
-						$this->barriers[1105] = $parse_res->tot['embed'] - $parse_res->tot['noembed'];
-					} else {
-						$this->barriers[1105] = 0;
-					}
-
-					/* Applets 1106 - manual*/
-					$this->potential[1106] = $parse_res->tot['applet'];
-					$this->barriers[1106] = 0;
-
-					/* Objets 1107 - manual*/
-					$this->potential[1107] = $parse_res->tot['object'];
-					$this->barriers[1107] = 0;
-
-					/* Iframes 1108 - manual*/
-					$this->potential[1108] = $parse_res->tot['iframe'];
-					$this->barriers[1108] = 0;
-
-					/* sounds 1109 - manual*/
-					$this->potential[1109] = $parse_res->tot['hrefson'];
-					$this->barriers[1109] = 0;
-
-					/* multimedia 1110 - manual*/
-					$this->potential[1110] = $parse_res->tot['hrefapp'];
-					$this->barriers[1110] = 0;
-
-					/* Alt content for frames 1111*/
-					if ($parse_res->pto[1111] == "mal") {
-						$this->potential[1111] = $parse_res->tot['frame'];
-						$this->barriers[1111] = 1;
-					} else {
-						$this->potential[1111] = $parse_res->tot['frame'] - ($parse_res->tot['noframes'] - $parse_res->tot['noframe_vacio']);
-						$this->barriers[1111] = 0;
-					}
+				/* Alt text for inputs 1102*/
+				$this->potential[1102] = $parse_res->tot['input_image'];
+				if ($parse_res->pto[1102] == "mal") {
+					$this->barriers[1102] = $parse_res->tot['input_image'] - $parse_res->tot['alt_input'];
+				} else {
+					$this->barriers[1102] = 0;
 				}
-				else
-				{
 
-					/* Alt text for images 1101*/
-					$this->potential['11101e'] = $parse_res->tot['img'];
-					if ($parse_res->pto['11101e'] == "mal") {
-						$this->barriers['11101e'] = $parse_res->tot['img'] - $parse_res->tot['alt_img'];
-					} else {
-						$this->barriers['11101e'] = 0;
-					}
+				/* Alt text for inputs 1103*/
+				$this->potential[1103] = $parse_res->tot['area'];
+				if ($parse_res->pto[1103] == "mal") {
+					$this->barriers[1103] = $parse_res->tot['area'] - $parse_res->tot['alt_area'];
+				} else {
+					$this->barriers[1103] = 0;
+				}
 
-					/* Alt text for inputs 1102*/
-					$this->potential['11102e'] = $parse_res->tot['input_image'];
-					if ($parse_res->pto['11102e'] == "mal") {
-						$this->barriers['11102e'] = $parse_res->tot['input_image'] - $parse_res->tot['alt_input'];
-					} else {
-						$this->barriers['11102e'] = 0;
-					}
+				/* Alt for scripts 1104 - manual*/
+				$this->potential[1104] = $parse_res->tot['script'];
+				$this->barriers[1104] = 0;
 
-					/* Alt text for inputs 1103*/
-					$this->potential['11103e'] = $parse_res->tot['area'];
-					if ($parse_res->pto['11103e'] == "mal") {
-						$this->barriers['11103e'] = $parse_res->tot['area'] - $parse_res->tot['alt_area'];
-					} else {
-						$this->barriers['11103e'] = 0;
-					}
+				/* Alt text for embed 1105*/
+				$this->potential[1105] = $parse_res->tot['embed'];
+				if ($parse_res->pto[1105] == "mal") {
+					$this->barriers[1105] = $parse_res->tot['embed'] - $parse_res->tot['noembed'];
+				} else {
+					$this->barriers[1105] = 0;
+				}
 
-					/* Alt for scripts 1104 - manual*/
-					$this->potential['12101e'] = $parse_res->tot['script'];
-					$this->barriers['12101e'] = 0;
+				/* Applets 1106 - manual*/
+				$this->potential[1106] = $parse_res->tot['applet'];
+				$this->barriers[1106] = 0;
 
-					/* Alt text for embed 1105*/
-					$this->potential['12102e'] = $parse_res->tot['embed'];
-					if ($parse_res->pto['12102e'] == "mal") {
-						$this->barriers['12102e'] = $parse_res->tot['embed'] - $parse_res->tot['noembed'];
-					} else {
-						$this->barriers['12102e'] = 0;
-					}
+				/* Objets 1107 - manual*/
+				$this->potential[1107] = $parse_res->tot['object'];
+				$this->barriers[1107] = 0;
 
-					/* Applets 1106 - manual*/
-					$this->potential['12103e'] = $parse_res->tot['applet'];
-					$this->barriers['12103e'] = 0;
+				/* Iframes 1108 - manual*/
+				$this->potential[1108] = $parse_res->tot['iframe'];
+				$this->barriers[1108] = 0;
 
-					/* Objets 1107 - manual*/
-					$this->potential['11104e'] = $parse_res->obj111;
-					$this->barriers['11104e'] = 0;
-					
-					/* Objets 1107 - manual*/
-					$this->potential['12104e'] = $parse_res->obj121;
-					$this->barriers['12104e'] = 0;
+				/* sounds 1109 - manual*/
+				$this->potential[1109] = $parse_res->tot['hrefson'];
+				$this->barriers[1109] = 0;
 
-					/* sounds 1109 - manual*/
-					$this->potential['12105e'] = $parse_res->tot['hrefson'];
-					$this->barriers['12105e'] = 0;
+				/* multimedia 1110 - manual*/
+				$this->potential[1110] = $parse_res->tot['hrefapp'];
+				$this->barriers[1110] = 0;
 
-					/* multimedia 1110 - manual*/
-					$this->potential['12106e'] = $parse_res->tot['hrefapp'];
-					$this->barriers['12106e'] = 0;
-					
-					/* link target */
-					$this->potential[313] = $parse_res->tot['form'];
-					$this->barriers[313] = 0;
+				/* Alt content for frames 1111*/
+				if ($parse_res->pto[1111] == "mal") {
+					$this->potential[1111] = $parse_res->tot['frame'];
+					$this->barriers[1111] = 1;
+				} else {
+					$this->potential[1111] = $parse_res->tot['frame'] - ($parse_res->tot['noframes'] - $parse_res->tot['noframe_vacio']);
+					$this->barriers[1111] = 0;
 				}
 
 				/* Checkpoint 1.2 - ismap - manual*/
@@ -1638,22 +1494,8 @@ class Metric{
 
 				$this->defineConstants();
 
-				if($isemag == false)
-				{
-					$this->pot_checkpoint['1.1'] = $this->potential[1101] + $this->potential[1102] + $this->potential[1103] + $this->potential[1104] + $this->potential[1105] + $this->potential[1106] + $this->potential[1107] + $this->potential[1108] + $this->potential[1109] + $this->potential[1110] + $this->potential[1111];
-					$this->bar_checkpoint['1.1'] = $this->barriers[1101] + $this->barriers[1102] + $this->barriers[1103] + $this->barriers[1104] + $this->barriers[1105] + $this->barriers[1106] + $this->barriers[1107] + $this->barriers[1108] + $this->barriers[1109] + $this->barriers[1110] + $this->barriers[1111];
-				}
-				else
-				{
-					$this->pot_checkpoint['1.11'] = $this->potential['11101e'] + $this->potential['11102e'] + $this->potential['11103e'] + $this->potential['11104e'];
-					$this->bar_checkpoint['1.11'] = $this->barriers['11101e'] + $this->barriers['11102e'] + $this->barriers['11103e'] + $this->barriers['11104e'];
-					
-					$this->pot_checkpoint['1.21'] = $this->potential['12101e'] + $this->potential['12102e'] + $this->potential['12103e'] + $this->potential['12104e'] + $this->potential['12105e'] + $this->potential['12106e'];
-					$this->bar_checkpoint['1.21'] = $this->barriers['12101e'] + $this->barriers['12102e'] + $this->barriers['12103e'] + $this->barriers['12104e'] + $this->barriers['12105e'] + $this->barriers['12106e'];					
-					
-					$this->pot_checkpoint['3.13'] = $this->potential[313];
-					$this->bar_checkpoint['3.13'] = $this->barriers[313];
-				}
+				$this->pot_checkpoint['1.1'] = $this->potential[1101] + $this->potential[1102] + $this->potential[1103] + $this->potential[1104] + $this->potential[1105] + $this->potential[1106] + $this->potential[1107] + $this->potential[1108] + $this->potential[1109] + $this->potential[1110] + $this->potential[1111];
+				$this->bar_checkpoint['1.1'] = $this->barriers[1101] + $this->barriers[1102] + $this->barriers[1103] + $this->barriers[1104] + $this->barriers[1105] + $this->barriers[1106] + $this->barriers[1107] + $this->barriers[1108] + $this->barriers[1109] + $this->barriers[1110] + $this->barriers[1111];
 
 				$this->pot_checkpoint['1.2'] = $this->potential[12];
 				$this->bar_checkpoint['1.2'] = $this->barriers[12];

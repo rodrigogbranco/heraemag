@@ -22,6 +22,10 @@ class Parse {
 	var $res_121_mal = 0;
 	var $res_121_duda = 0;
 	
+	/*for metrics*/
+	var $obj111 = 0;
+	var $obj121 = 0;
+	
 	function This_Page($redir="", $meta="") {
 		global $tags, $contents;
 		global $isemag;
@@ -503,11 +507,13 @@ class Parse {
 						{
 							$this->res_111_duda++;
 							$this->pto['11104e'] = 'duda';
+							$this->obj111++;
 						}
 						else
 						{
 							$this->res_121_duda++;
 							$this->pto['12104e'] = 'duda';
+							$this->obj121++;
 						}
 					}
 					/*RGB end*/
