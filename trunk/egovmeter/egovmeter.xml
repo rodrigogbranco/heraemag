@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<rss version="2.0">
+    <channel>
+        <title>E-GOVMeter Municípios</title>
+        <description>Portal Governoeletronico.com.br - DC/UFSCar</description>
+        <link>http://www.governoeletronico.com.br/egovmeter</link>
+        <lastBuildDate>Mon, 14 Nov 2005 13:08:26 +0100</lastBuildDate>
+        <generator>E-GOVMeter RSS Generator</generator>
+        <language>pt-br</language>
+        <image>
+            <url>http://www.sbcat.org</url>
+            <title>Sociedade Brasileira de Catálise</title>
+            <link>http://www.sbcat.org/imgs/rss.gif</link>
+            <description>Sociedade Brasileira de Catálise</description>
+        </image>
+        <item>
+            <title>XX Simpósio Ibero-americano de Catálise</title>
+            <link>http://www.xxsicat.sbcat.org/</link>
+            <description>O principal objetivo deste Simpósio é divulgar as atividades de pesquisa e industriais relacionadas à área de catálise, promover o intercâmbio de idéias e experiências, além de fomentar a cooperação entre cientistas e técnicos que atuam no setor.
+            Gramado, Rio Grande do Sul, Brasil
+            17-22 de setembro de 2006</description>
+        </item>
+        <item>
+            <title>Associe-se</title>
+            <link>http://www.sbcat.org/socios/associe.php</link>
+            <description>Participe da integração científica entre os Sócios</description>
+        </item>
+        <item>
+            <title>A Catálise no Brasil</title>
+            <link>http://www.sbcat.org/catalise/</link>
+            <description>O maior coleção de dados sobre Catálise é na SBCat</description>
+        </item>
+        <item>
+            <title>Parceria com Empresas</title>
+            <link>http://www.sbcat.org/sbcat/empresas.php</link>
+            <description>Veja como aproximar seus produtos da comunidade cientifica</description>
+        </item>
+        <item>
+            <title>Administração da SBCat</title>
+            <link>http://www.sbcat.org/sbcat/administracao.php</link>
+            <description>Conheça mais da Administração da SBCat</description>
+        </item>
+    </channel>
+</rss>
