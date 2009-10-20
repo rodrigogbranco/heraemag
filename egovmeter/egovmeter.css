@@ -1,0 +1,295 @@
+BODY
+{
+  scrollbar-face-color: #ebecec;
+  scrollbar-highlight-color: white;
+  scrollbar-shadow-color: #aaaaaa;
+  scrollbar-3dlight-color: #dddddd;
+  scrollbar-arrow-color: gray;
+  scrollbar-track-color: white;
+  scrollbar-darkshadow-color: white;
+  font-size: 10px;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+ }
+
+TABLE.Menu {
+	border-collapse: collapse;
+	border:1px solid #D1D1D1;
+	border-spacing: 4px; 
+	margin-top:4px;
+}
+
+TABLE.FormTable {
+	margin-left: 0;
+        margin-right: 0;
+        border-collapse: collapse;
+        border:1px solid #D1D1D1;
+        border-spacing: 4px;
+        margin-top:4px;
+}
+
+TD.FormTD {
+        padding-left:3px;
+padding-top:1px;
+}
+
+ 
+p.paragrafo {
+	text-align: justify; 
+	text-indent: 17; 
+	margin-left: 0; 
+	margin-top: 1; 
+}
+
+p.titulo {
+	text-align: center; 
+	margin-left: 2; 
+	margin-right: 2;
+	margin-top: 1;
+        margin-bottom:3; 
+	padding-top: 1;
+        padding-left: 0;
+	font-size: 12px;
+        font-weight: bold; 
+	color: #1E2D3C;
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+        border-width: 1px;
+	background-color: #e5e5e5;  
+	BORDER-RIGHT: #ACACAC 1px solid; 
+        BORDER-TOP: #F6F6F6 1px solid; 
+        BORDER-BOTTOM: #ACACAC 1px solid; 
+        BORDER-LEFT: #F6F6F6 1px solid; 
+}
+
+p.sair {
+	text-align: right; 
+	margin-left: 0; 
+	margin-right: 0;
+	margin-top: 1; 
+	margin-bottom: 2;
+	padding-top: 1;
+	font-size: 12px;
+    font-weight: bold; 
+	color: #1E2D3C;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    border-width: 1px;
+}
+
+
+p.erro   {
+	border-width: 1px;
+	border-style: dashed;
+	border-color: #FF0000;
+}
+
+
+TD {
+  font-size: 10px;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+
+TD.enquete {
+	padding-left:2px; 
+	background-color: #e5e5e5;  
+	background-image: url('imgs/noff.gif'); 
+	background-repeat: no-repeat; 
+	background-position:  right bottom; 
+}
+
+TD.enquete-corpo {
+	padding-left:2px; 
+	background-color: #F6F6F6;  
+}
+
+TD.FormTitulo {
+        text-align:center;
+        padding-top:5px;
+        padding-left:2px;
+        padding-bottom:5px;
+        background-color: #F6F6F6;
+        font-size: 10px;
+        font-weight: bold;
+        color: #1E2D3C;
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+
+TD.menu-link-off {
+	height: 15px; 
+	padding-left:2px; 
+	background-color: #e5e5e5;  
+	background-image: url('imgs/noff.gif'); 
+	background-repeat: no-repeat; 
+	background-position:  right bottom; 
+	cursor: pointer
+}
+
+TD.menu-link-on {
+	height: 15px; 
+	padding-left:2px; 
+	background-color: #DDDDDD;  
+	background-image: url('imgs/non.gif'); 
+	background-repeat: no-repeat; 
+	background-position:  
+	right bottom; 
+	text-decoration: underline; 
+	color:#000000; 
+	cursor: pointer
+}
+
+TR.LinhaMenu {
+  font-size: 11px;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  height=14;  
+}
+
+TR.LinhaEnquete {
+  font-size: 11px;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  height=3;  
+}
+
+input.noneEnquete {
+   BORDER-RIGHT: #F6F6F6 1px solid; 
+   BORDER-TOP: #F6F6F6 1px solid; 
+   BORDER-BOTTOM: #F6F6F6 1px solid; 
+   BORDER-LEFT: #F6F6F6 1px solid; 
+   background-color: #F6F6F6;
+   MARGIN-TOP: -3px; 
+   MARGIN-BOTTOM: -2px; 
+   MARGIN-LEFT: -2px;
+}
+
+input.noneOK {
+   BORDER-RIGHT: #F6F6F6 0px solid; 
+   BORDER-TOP: #F6F6F6 0px solid; 
+   BORDER-BOTTOM: #F6F6F6 0px solid; 
+   BORDER-LEFT: #F6F6F6 0px solid; 
+   background-color: #F6F6F6;
+}
+
+input.none {
+   BORDER-RIGHT: #FFFFFF 1px solid; 
+   BORDER-TOP: #FFFFFF 1px solid; 
+   BORDER-BOTTOM: #FFFFFF 1px solid; 
+   BORDER-LEFT: #FFFFFF 1px solid; 
+}
+
+INPUT, textarea, select
+{  BORDER-RIGHT: #bbbbbb 1px solid; 
+   BORDER-TOP: #bbbbbb 1px solid; 
+   FONT-SIZE: 11px; 
+   BORDER-LEFT: #bbbbbb 1px solid; 
+   COLOR: #000000; 
+   BORDER-BOTTOM: #bbbbbb 1px solid; 
+   FONT-FAMILY: Verdana, Arial; 
+   BACKGROUND-COLOR: white; 
+   font-weight: normal; 
+   background : #ffffff;
+   scrollbar-face-color: #ebecec;
+   scrollbar-highlight-color: white;
+   scrollbar-shadow-color: #aaaaaa;
+   scrollbar-3dlight-color: #dddddd;
+   scrollbar-arrow-color: gray;
+   scrollbar-track-color: white;
+   scrollbar-darkshadow-color: white;  
+}
+
+a:link {
+	text-decoration: underline;
+	color: #000000;
+}
+a:visited {
+	text-decoration: underline;
+	color: #000000;
+}
+a:hover {
+	text-decoration: underline; 
+	color: #000000;
+}
+a:active {
+	text-decoration: underline;
+	color: #000000;
+}
+
+a.none:link {
+	text-decoration: none;
+	color: #000000;
+}
+a.none:visited {
+	text-decoration: none;
+	color: #000000;
+}
+a.none:hover {
+	text-decoration: none; 
+	color: #000000;
+}
+a.none:active {
+	text-decoration: none;
+	color: #000000;
+}
+
+.margemImg	{
+   BORDER-RIGHT: #FFFFFF 4px solid; 
+   BORDER-TOP: #FFFFFF 3px solid; 
+   BORDER-BOTTOM: #FFFFFF 2px solid; 
+   BORDER-LEFT: #FFFFFF 0pt solid; 
+}
+
+.bordacinza {
+	border: 1px solid #C0C0C0;
+}
+.alignright {
+	text-align: right;
+}
+
+#alerta {
+	align: center;
+	width: 490px;
+	padding-bottom: 1;
+	margin: 0;
+	background-color: #F6F6F6;
+	border:1px solid #D1D1D1;
+    margin-left: 3;
+    margin-top: 2; 
+}
+
+#menubv {
+	width: 148px;
+	padding-bottom: 1;
+	margin: 0;
+	background-color: #F6F6F6;
+	border:1px solid #D1D1D1;
+    margin-left: 3;
+    margin-top: 2; 
+}
+
+#menubv ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	border: none;
+}
+
+#menubv li a { 
+	height: 15px; 
+	width: 146;
+    border:1px solid #F6F6F6; 
+    border-bottom:0;
+    display: block; 
+    text-align: left;
+	text-decoration: none; 
+} 
+
+#menubv li a:hover { 
+	background: #DDDDDD; 
+	text-decoration: none;
+}
+
+#menubv li a:active { 
+	text-decoration: none;
+}
+
+#menubv li { 
+	background: #E5E5E5; 
+}
