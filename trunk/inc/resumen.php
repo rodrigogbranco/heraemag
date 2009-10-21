@@ -33,6 +33,7 @@ class Resumen {
 	var $t_nose = 0;
 	var $accesibilidad = '';
 	var $teste;
+	var $myresults;
 
 /*====================================================*\
 	Function: Total results by priorities                
@@ -88,6 +89,8 @@ class Resumen {
 			}
 			$this->accesibilidad = ' <img src="img/her_'.$ico_acc.'.gif" alt="'.sprintf($lang['ico_hera_acc'], $ico_acc).'" width="90" height="30" style="float:right" />';
 		}
+		
+		$this->myresults = $resultados;
 
 	} // End function Resumen
 
