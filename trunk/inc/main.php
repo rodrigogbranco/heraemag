@@ -16,6 +16,10 @@ require_once ("inc/common.php"); // Some core libraries
 require_once('inc/resumen.php'); // Class to build the summary of results
 cleanAll();
 
+var_dump($_REQUEST);
+var_dump($_POST);
+var_dump($_GET);
+
 /*RGB begin*/
 if(isset($_POST['choose']))
 {
