@@ -15,6 +15,8 @@ require_once('lang/'.IDIOMA.'/lang.php'); // Interface texts
 require_once("lang/".IDIOMA."/wcag.php"); // Guidelines texts
 require_once ("inc/common.php"); // Some core libraries
 require_once('inc/resumen.php'); // Class to build the summary of results
+require_once('inc/file.php');
+require_once("inc/parse.php");
 //cleanAll();
 
 $_POST['choose'] = 'emag';
@@ -25,95 +27,67 @@ $_REQUEST['btns'] = 'Rever';
 
 $variables = null;
 
+$user_agent = "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.8.0.10) Gecko/20070302 Ubuntu/dapper-security Firefox/1.5.0.10";
+
 $sessao = 26;
 
-$consulta = mysql_query("select id_municipio from egovmeter_monitoramento");
-$total = mysql_num_rows($consulta);
+$consulta1 = mysql_query("select id_municipio from egovmeter_monitoramento");
+$total = mysql_num_rows($consulta1);
 
-$consulta = mysql_query("select id_municipio from egovmeter_monitoramento where id_sessao_monitoramento = $sessao and not (ip is NULL or ip = '208.69.32.132' or ip = '67.215.66.132')");
-$havesite = mysql_num_rows($consulta);
+$consulta1 = mysql_query("select id_municipio from egovmeter_monitoramento where id_sessao_monitoramento = $sessao and not (ip is NULL or ip = '208.69.32.132' or ip = '67.215.66.132')");
+$havesite = mysql_num_rows($consulta1);
 
-while($result = mysql_fetch_array($consulta, MYSQL_ASSOC))
+$x = 0;
+
+while($result = mysql_fetch_array($consulta1, MYSQL_ASSOC))
 {
 	$id_mun = intval($result['id_municipio']);
 	$consulta2 = mysql_query("select url from egovmeter_municipio where id_municipio = $id_mun");
 	$result2 = mysql_fetch_array($consulta2,MYSQL_ASSOC);
 	
 	$_REQUEST['url'] = $result2['url'];
+	$url = $result2['url'];
+	echo $url.'<br>';
 	
-	echo $_REQUEST['url'];
 	
-	$tags = array(); // Page tags
-	$contents = array(); // Page content
+		$File = new File(urldecode($url), $user_agent);
 
-	define ('TIME_START', Get_MTime());
-
-	if ($_REQUEST['hid']) {
-		define ('HID', (int)$_REQUEST['hid']);
-	}
-
-	if ($_REQUEST['url'] == 'referer') {
-		$url_tmp = cleanStr($_SERVER["HTTP_REFERER"]);
-	} else {
-		$url_tmp = trim($_REQUEST['url']);
-	}
-
-	require_once('inc/file.php');
-	$File = new File(urldecode($url_tmp), $_SERVER['HTTP_USER_AGENT']);
-
-	if ($File->error == '') {
-		if (!$File->fetch($File->uri_real, 'base', 'arry')) {
-		// The target page could not be read
-			$opt_head['error'] = $lang['file_error'];
+		if ($File->error == '') {
+			if (!$File->fetch($File->uri_real, 'base', 'arry')) {
+				$opt_head['error'] = "Not fetched";
+			} else {
+				if ($File->lastredirectaddr != '') {
+					$url_redir = $File->uri_real;
+				}
+				if ($File->meta_redirect != '') {
+					$meta_redir = $File->meta_redirect;
+				}
+			}
 		} else {
-			if ($File->lastredirectaddr != '') {
-				$url_redir = $File->uri_real;
-			}
-			if ($File->meta_redirect != '') {
-				$meta_redir = $File->meta_redirect;
-			}
+			$opt_head['error'] = "Not opened";
 		}
-	} else {
-		$opt_head['error'] = $File->error;
-	}
 
-	if ($opt_head['error'] != '') {
+		if ($opt_head['error'] != '') {
+			//return -1;
+		} else { // No error
+			$parse_res = new Parse;
+			$parse_res->This_Page($url_redir, $meta_redir);
 
-		include_once('inc/header.php');
-		include_once('inc/pages.php');
+			if (defined('ID')) 
+			{ // Parse page was successful
+				DB_Query('select', 'todo');
 
-	} else { // No error
-
-		if ($_SESSION['uri_anterior']) {
-			if (!defined(HID) && isset($_SESSION['ultimo_id'])) {
-				define ('HID', (int)$_SESSION['ultimo_id']);
+				$New_Resumen = new Resumen;
+				$this_results = Obter_Resultados();
+				var_dump($New_Resumen);
+				var_dump($this_results);
 			}
 		}
-		$_SESSION['uri_anterior'] = URL;
-		require_once ("inc/parse.php");
-		$New_Parse = new Parse;
-		$New_Parse->This_Page($url_redir, $meta_redir);
-
-		if (defined('ID')) { // Parse page was successful
-			$param = '?id='.(int)ID;
-			$opt_head['bread'] = 'resumen';
-			$opt_head['form'] = URL;
-			$opt_head['bar'] = 'info';
-			include_once('inc/header.php');
-			
-			DB_Query('select', 'todo');
-			$New_Resumen = new Resumen;
-			$New_Resumen->Results();
-
-		} else { // Parse page fails
-
-			$opt_head['error'] = $lang['page_error'];
-			include_once('inc/header.php');
-			include_once('inc/pages.php');
-		}
-	}
 	
-	die();
+	if ($x < 5)
+		$x++;
+	else
+		die();
 	
 }
 

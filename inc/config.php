@@ -1,9 +1,9 @@
 <?php
-$website = 'http://localhost/heraemag/';
+$website = 'http://developer.ledes.net/~rodrigo/heraemag/';
 $default_lang = 'es';
 $db_table = 'ariadna';
 
-$db_host = "localhost";
+$db_host = "db.ledes.net";
 $db_name = "hera"; // Nombre de la base de datos
 $db_user = "hera"; // Nombre de usuario
 $db_pw = "hera"; // Password
